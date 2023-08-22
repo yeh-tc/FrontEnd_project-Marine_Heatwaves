@@ -193,7 +193,7 @@
             }
 
             .aside-switch {
-                padding-top: 20px;
+                padding-top: 16px;
             }
 
             .switch {
@@ -254,7 +254,7 @@
                 padding: 2px;
                 width: 97px;
                 height: 35px;
-                background-color: #565656;
+                background-color: #707070;
                 border-radius: 60px;
                 -moz-border-radius: 60px;
                 -webkit-border-radius: 60px;
@@ -274,7 +274,7 @@
                 left: 2px;
                 bottom: 2px;
                 right: 2px;
-                background-color: #565656;;
+                background-color: #7A7A7A;
                 border-radius: 60px;
                 -moz-border-radius: 60px;
                 -webkit-border-radius: 60px;
@@ -678,7 +678,6 @@
                 font-weight: bold;
                 font-size: 14px;
                 padding: 10px;
-                border: none;
                 cursor: pointer;
                 text-transform: uppercase;
                 border-radius: 5px;
@@ -686,14 +685,24 @@
                 -webkit-border-radius: 5px;
                 -o-border-radius: 5px;
                 -ms-border-radius: 5px;
-                background: transparent;
-                color: #f65b3c;
-                border: 1px solid rgba(255, 255, 255, 0.84);
+                background: #f65b3c;
+                color: rgba(255, 255, 255, 0.84);
+                border:none;
             }
 
             #downloadbtn:hover {
-                border: 1px solid rgb(246, 91, 60);
+                background: #C0392B;
             }
+            #downloadbtn:disabled {
+                color: #252328;
+                background: #C0392B;
+                cursor: not-allowed;
+            }
+              
+            #downloadbtn:disabled:active{
+                transform: none;
+            }
+
             .error-message {
                 color: #f65b3c;
                 font-size: 0.9em;
@@ -828,7 +837,7 @@
                 }
             }
 
-            @media screen and (max-width: 480px) {
+            @media screen and (max-width: 486px) {
                 #download .query {
                     width: 100%;
                 }
@@ -888,7 +897,7 @@
                 </div>
             </div>
 
-            <button class="burger" onclick="toggleMenu()">
+            <button class="burger" id="burger">
                 <span class="material-symbols-outlined">
                     menu
                 </span>
@@ -1078,7 +1087,7 @@
                                 <div>
                                     <div class="title-wrapper">
                                         <h3><span class="underline">Reference List</span></h3>
-                                        <button onclick="toggleDropdown()">
+                                        <button id="reference">
                                             <span id="chevron" class="chevron material-symbols-outlined">
                                                 expand_more
                                             </span>
@@ -1289,7 +1298,7 @@
                 const { pageYOffset } = window;
                 sections.forEach((section) => {
                     const { id, offsetTop, clientHeight } = section;
-                    const offset = offsetTop -1 ;
+                    const offset = offsetTop -72 ;
                     if (pageYOffset >= offset && pageYOffset < offset + clientHeight) {
                         resetLinks();
                         navLinks.forEach((link) => {
@@ -1304,8 +1313,9 @@
             document.addEventListener("scroll", handleScroll);
             //menu
             const toggleMenu = () => document.body.classList.toggle("open");
+            document.getElementById("burger").addEventListener("click", toggleMenu);
             //reference list
-            function toggleDropdown() {
+            const toggleDropdown = () => {
                 const rfElement = document.getElementById("rf");
                 const chevron = document.getElementById("chevron");
 
@@ -1318,9 +1328,10 @@
                     ? "expand_more"
                     : "close";
             }
-
+            document.getElementById("reference").addEventListener("click", toggleDropdown);
             // show alert
             function showAlert(message) {
+                document.getElementById('downloadbtn').disabled = true;
                 const alertBox = document.createElement('div');
                 alertBox.style.position = 'fixed';
                 alertBox.style.top = '50%';
@@ -1354,14 +1365,9 @@
                 closeButton.onmouseover = function () {
                     this.style.backgroundColor = '#C0392B';
                 };
-                closeButton.onmouseout = function () {
-                    this.style.backgroundColor = '#E74C3C';
-                };
                 closeButton.onclick = function () {
                     document.body.removeChild(alertBox);
-                };
-                closeButton.onclick = function () {
-                    document.body.removeChild(alertBox);
+                    document.getElementById('downloadbtn').disabled = false;
                 };
                 alertBox.appendChild(closeButton);
 
@@ -1438,12 +1444,43 @@
                 }
 
             });
-            const languageSwitch = document.querySelector('#language-toggle');
-            languageSwitch.addEventListener('change', function () {
-                const currentLang = languageSwitch.checked ? 'en' : 'zh';
-                switchLanguage(currentLang);
+            //language
+            document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitchNav = document.querySelector('#language-toggle');
+            const languageSwitchAside = document.querySelector('#language-toggle-aside');
+
+            function synchronizeSwitches(checkedState) {
+                console.log(checkedState);
+                languageSwitchNav.checked = checkedState;
+                languageSwitchAside.checked = checkedState;
+            }
+
+            languageSwitchNav.addEventListener('change', function () {
+                synchronizeSwitches(languageSwitchNav.checked);
+                switchLanguage(languageSwitchNav.checked ? 'en' : 'zh');
             });
 
+            languageSwitchAside.addEventListener('change', function () {
+                synchronizeSwitches(languageSwitchAside.checked);
+                switchLanguage(languageSwitchAside.checked ? 'en' : 'zh');
+            });
+            const currentURL = new URL(window.location.href);
+            // 使用 URLSearchParams 取得 'lang' 參數
+            const langParam = currentURL.searchParams.get('lang');
+
+            if (langParam) {
+                if (langParam.toUpperCase() === 'EN') {
+                    synchronizeSwitches(true); // 切換到英文模式
+                    switchLanguage('en');
+                } else if (langParam.toUpperCase() === 'TW') {
+                    synchronizeSwitches(false); // 切換到中文模式
+                    switchLanguage('zh');
+                }
+            } else {
+                // 如果沒有指定語言參數，使用中文
+                switchLanguage('zh');
+            }
+        })
             const translations = {
                 en: {
                     home_subtitle: `ODB provides the open data of marine heatwave levels, as well as monthly mean sea surface temperature (SST), SST anomalies, and thermal displacement caused by marine heatwaves at a 0.25° x 0.25° global resolution.`,
