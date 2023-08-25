@@ -34,6 +34,7 @@
                 color: #222;
                 -webkit-text-size-adjust: 100%;
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                overscroll-behavior: none;
             }
 
             p {
@@ -313,7 +314,7 @@
                 -o-justify-content: center;
                 -ms-justify-content: center;
                 min-height: 100vh;
-                padding: 100px 5%;
+                padding: 120px 5%;
                 text-align: left;
             }
 
@@ -491,6 +492,14 @@
                 font-family: "Poppins", 'Noto Sans TC', sans-serif;
             }
 
+            
+
+
+            #gallery img {
+                height: 30vh;
+                width: auto;
+                object-fit: cover;
+            }
 
             #download {
                 background: #2a282d;
@@ -900,24 +909,22 @@
                 font-size: 14px;
                 color: rgba(255, 255, 255, 0.84);
             }
-
-            @media screen and (min-width:1025px) {
+            /*1680以上*/
+            @media screen and (min-width:1680px) {
                 h1 {
-                    font-size: 76px;
+                    font-size: 62px;
                 }
-
                 h2 {
                     font-size: 34px;
                 }
-
                 nav a {
                     font-size: 18px;
                 }
-
                 #home .home_subtitle {
                     font-size: 19px;
+                    margin: 0 auto;
+                    max-width: 75%;
                 }
-
                 p {
                     font-size: 18px;
                 }
@@ -925,13 +932,15 @@
                 #about .img_caption {
                     font-size: 15px;
                 }
-
-                #method .card h3 {
+                #method .content h3{
+                    font-size: 28px;
+                }
+                #method .card h3 span {
                     font-size: 22px;
                 }
 
                 #about .img_responsive {
-                    max-width: 700px;
+                    max-width: 670px;
                 }
 
                 #download .note li {
@@ -961,39 +970,189 @@
                     font-size: 17px;
                 }
 
-                .csv p {
+                .csv p,span{
                     font-size: 17px;
                 }
 
                 #download p.hash {
                     font-size: 17px;
                 }
+                .api-demo{
+                    margin-bottom: 100px;
+                }
             }
-
-
-            @media screen and (max-width: 1024px) {
+            /*1441-1679*/
+            @media screen and (max-width: 1679px){
                 h1 {
-                    font-size: 60px;
+                    font-size: 56px;
                 }
-
-                h2 {
-                    font-size: 28px;
-                }
-
                 #home .home_subtitle {
                     font-size: 18px;
+                    margin: 0 auto;
+                    max-width: 70%;
+                }
+                nav a {
+                    font-size: 17px;
+                }
+                h2 {
+                    font-size: 30px;
+                }
+                p {
+                    font-size: 17px;
+                }
+                #about .img_responsive {
+                    max-width: 48%;
+                }
+                #about .img_caption {
+                    font-size: 15px;
+                }
+                #method .content h3{
+                    font-size: 24px;
+                }
+                #method .card h3 span {
+                    font-size: 21px;
+                }
+                .active_rf {
+                    font-size: 17px;
+                    line-height: 2;
+                }
+                #download .note li {
+                    font-size: 17px;
+                    inline-size: auto;
+                    line-height: 36px;
                 }
 
+                #download .material-checkbox {
+                    font-size: 17px;
+                }
+
+                #download input {
+                    font-size: 17px;
+                }
+
+                #download label {
+                    font-size: 17px;
+                }
+                .url {
+                    font-size: 16.3px;
+                }
+
+                .csv p, span {
+                    font-size: 16.3px;
+                }
+
+                #download p.hash {
+                    font-size: 16.3px;
+                }
+                .api-demo{
+                    margin-bottom: 80px;
+                }
+            }
+            /*1024-1440*/
+            @media screen and (max-width: 1440px){
+                h1 {
+                    font-size: 52px;
+                }
+                #home .home_subtitle {
+                    font-size: 17.2px;
+                    margin: 0 auto;
+                    max-width: 70%;
+                }
+                nav a {
+                    font-size: 16px;
+                }
+                h2 {
+                    font-size: 30px;
+                }
                 p {
                     font-size: 16px;
                 }
+                #about .img_responsive {
+                    max-width: 580px;
+                }
+                #about .img_caption {
+                    font-size: 15px;
+                }
+                #method .content h3{
+                    font-size: 22.5px;
+                }
+                #method .card h3 span{
+                    font-size: 20px;
+                }
+                .active_rf {
+                    font-size: 16px;
+                    line-height: 1.8;
+                }
+                #download .note li {
+                    font-size: 16px;
+                    inline-size: auto;
+                    line-height: 32px;
+                }
 
+                #download .material-checkbox {
+                    font-size: 16px;
+                }
+
+                #download input {
+                    font-size: 16px;
+                }
+
+                #download label {
+                    font-size: 16px;
+                }
+                .url {
+                    font-size: 15px;
+                }
+
+                .csv p, span {
+                    font-size: 15px;
+                }
+
+                #download p.hash {
+                    font-size: 15px;
+                }
+                .download-subtitle h3 {
+                    font-size: 22px;
+                }
+
+                .download-subtitle span {
+                    padding-top: 25px;
+                    font-size: 28px;
+                }
+                .api-demo{
+                    margin-bottom: 60px;
+                }
+
+            }
+            @media screen and (max-width: 1024px) {
+                h1 {
+                    font-size: 50px;
+                }
+
+                h2 {
+                    font-size: 27px;
+                }
+
+                #home .home_subtitle {
+                    font-size: 16.5px;
+                    max-width: 78%;
+                }
+                #method .content h3{
+                    font-size: 23px;
+                }
+                #method .card h3 span{
+                    font-size: 20px;
+                }
                 #about .img_caption {
                     font-size: 14px;
                 }
+                .download-subtitle h3 {
+                    font-size: 20px;
+                }
 
-                #about .img_responsive {
-                    max-width: 580px;
+                .download-subtitle span {
+                    padding-top: 23px;
+                    font-size: 26px;
                 }
 
                 .container {
@@ -1010,6 +1169,9 @@
 
                 .query-form {
                     width: 100%;
+                }
+                .api-demo{
+                    margin-bottom: 40px;
                 }
             }
 
@@ -1032,33 +1194,30 @@
                     width: 100%;
                     padding: 0px 0px;
                 }
+                #home .home_subtitle {
+                    font-size: 16.5px;
+                    max-width: 85%;
+                }
             }
 
             @media screen and (max-width: 768px) {
                 h1 {
-                    font-size: 50px;
+                    font-size: 40px;
                 }
 
                 h2 {
                     font-size: 26px;
                 }
 
-                #method .content h3 {
-                    font-size: 24px;
-                }
-
-                .download-subtitle h3 {
-                    font-size: 22px;
-                }
 
                 .download-subtitle span {
                     padding-top: 25px;
                     font-size: 28px;
                 }
 
-                #method .card h3 {
+                #method .card h3 span{
                     text-align: start;
-                    font-size: 22px;
+                    font-size: 19px;
                 }
 
                 #home .title {
@@ -1110,7 +1269,7 @@
                     font-size: 26px;
                 }
 
-                #method .card h3 {
+                #method .card h3 span{
                     text-align: start;
                     font-size: 20px;
                 }
@@ -1147,7 +1306,23 @@
                 aside {
                     display: flex;
                 }
+                .copywright p{
+                    margin:0 10px;
+                }
             }
+            
+            
+            #gallery {
+                min-height: 50vh;
+                background: #FFFFFF;
+                
+            }
+            .gallery-container {
+                display: flex; /* This ensures the images are laid out horizontally */
+                overflow: hidden;
+            }
+            
+            
         </style>
 
     </head>
@@ -1252,21 +1427,21 @@
                             <p class="about_text" data-lang="about_text">
                                 全球暖化造成的氣候危機導致地球持續升溫，陸地上的異常高溫熱浪帶來致命的威脅，而海洋也面臨相同狀況。在同一地點，
                                 若海水溫度相對與過去平均海洋溫度出現一段時間的異常高溫，這種現象被稱為海洋熱浪 (marine heatwaves, MHWs)
-                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf">Pearce et
+                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf" target="_blank">Pearce et
                                     al.,
                                     2011</a>; <a
-                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057">Hobday et
+                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057" target="_blank">Hobday et
                                     al., 2016</a>)。
-                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082">Di
+                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082" target="_blank">Di
                                     Lorenzo and Mantua, 2016</a>)，而這種長時間異常高溫的環境對於海洋生物、海洋生態系統和漁業資源都造成極大的影響。
                                 為了提升民眾對海洋熱浪的認識， ODB 使用 <a
-                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst">NOAA
+                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA
                                     OISST</a>（Optimum Interpolation Sea
                                 Surface Temperature 海表溫度）0.25° x 0.25° 的資料，
                                 並依 <a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et
                                     al. (2020)</a> 的方法，計算了全球 1982 年至今約 40 年間每個月的海洋熱浪事件（詳見 Method），
                                 同時，我們依據 <a
-                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday
+                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
                                     et al. (2018)</a> 的分級標準，將海洋熱浪分級，
                                 建立了一個全球海洋熱浪資料庫。此資料庫內容包含：每月的海表平均溫度、海表溫度異常值、海洋熱浪級數與海洋熱浪引起的熱位移*。
                                 該資料將每月進行更新，並開放資料下載。同時，我們也開放 <a
@@ -1275,31 +1450,31 @@
                                     href="https://ecodata.odb.ntu.edu.tw/geoserver/gwc/service/wmts/?service=WMTS&request=getCapabilities">WMTS</a>
                                 圖層（介接網址如超連結），
                                 歡迎各界介接（若使用 QGIS 介接，可參考<a href="https://ecodata.odb.ntu.edu.tw/geoserver/
-                            marineheatwave/wms">此網頁</a>）。<br /><br />
+                            marineheatwave/wms" target="_blank">此網頁</a>）。<br /><br />
 
-                                根據 <a href="https://doi.org/10.1017/9781009325844">2022 年的《政府間氣候變化專門委員會》(IPCC)
+                                根據 <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 年的《政府間氣候變化專門委員會》(IPCC)
                                     報告</a>，未來全球海洋熱浪事件不僅頻率將增加，強度與持續時間也將上升。
-                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9">Frölicher et
+                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9" target="_blank">Frölicher et
                                     al.
-                                    2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9">Oliver et
+                                    2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9" target="_blank">Oliver et
                                     al.,
                                     2018</a>) ，
                                 ODB
                                 希望透過建立海洋熱浪資料庫提升使用者對海洋熱浪的認知與意識，進一步協助學界研究海洋熱浪時空分布和變化趨勢以及對海洋生物的可能影響，同時也為預測和應對海洋熱浪提供科學數據參考。<br /><br />
 
                                 * Thermal Displacement: 熱位移就是在海洋熱浪的影響下，為了追隨長期平均海表溫度所需移動的最小距離 (<a
-                                    href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al., 2020</a>)。
+                                    href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)。
                                 熱位移在本篇文獻中特指海洋熱浪對周圍海洋生態系統的影響範圍，特別是對海洋生物遷移、分布範圍和生態系統功能的影響。
                             </p>
                             <div class="figwrapper">
                                 <img src="./assets/hobday_2018.jpg" alt="" style="vertical-align:middle"
                                     class="img_responsive" /><br>
                                 <div class="img_caption" data-lang="fig1_text">海洋熱浪分級標準，依據 <a
-                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday
+                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
                                         et al., 2018</a> 分級方法，每月 SST 異常值超過門檻值 2 倍以下、2 倍至 3
                                     倍之間、3 倍至 4 倍之間、4倍以上，
                                     其分級為 Moderate、Strong、Severe、Extreme，共四級。圖修改自 <a
-                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday
+                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
                                         et al. (2018)。</a></div>
                             </div>
                         </div>
@@ -1346,7 +1521,7 @@
                                     <h3><span class="underline">Step C-1</span></h3>
                                     <p data-lang="step_c_1">每月 SST 異常值（算法如 Step B）至少高於季節背景值*的第 90 個百分位數。<br />
                                         *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1、2、3 月全部每月 SST 異常值的第 90
-                                        個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al.,
+                                        個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al.,
                                             2020</a>)</p>
                                 </div>
                                 <div class="card">
@@ -1358,10 +1533,10 @@
                             <div class="card">
                                 <h3><span class="underline">GitHub</span></h3>
                                 <p>Jacox et al., 2020: <a
-                                        href="https://github.com/mjacox/Thermal_Displacement/">https://github.com/mjacox/Thermal_Displacement</a>
+                                        href="https://github.com/mjacox/Thermal_Displacement/" target="_blank">https://github.com/mjacox/Thermal_Displacement</a>
                                     (in Matlab)</p>
                                 <p>ODB: <a
-                                        href="https://github.com/yeh-tc/Python_project-Thermal_Displacement">https://github.com/yeh-tc/Python_project-Thermal_Displacement</a>
+                                        href="https://github.com/yeh-tc/Python_project-Thermal_Displacement" target="_blank">https://github.com/yeh-tc/Python_project-Thermal_Displacement</a>
                                     (in Python)</p>
                             </div>
                             <div class="card">
@@ -1379,31 +1554,31 @@
                                         <ul>
                                             <li>Di Lorenzo, E., &Mantua, N. (2016). Multi-year persistence of the
                                                 2014/15 North Pacific marine heatwave. Nature Climate Change , 6(11),
-                                                1042–1047. <a href="http://dx.doi.org/10.1038/nclimate3082">doi:
+                                                1042–1047. <a href="http://dx.doi.org/10.1038/nclimate3082" target="_blank">doi:
                                                     10.1038/nclimate3082</a></li>
                                             <li>Frölicher, T. L., Fischer, E. M., &Gruber, N. (2018). Marine heatwaves
                                                 under global warming. Nature, 560(7718), 360–364. <a
-                                                    href="https://doi.org/10.1038/s41586-018-0383-9">doi:
+                                                    href="https://doi.org/10.1038/s41586-018-0383-9" target="_blank">doi:
                                                     10.1038/s41586-018-0383-9</a></li>
                                             <li>Hobday, A. J., Alexander, L.V., Perkins, S. E., Smale, D. A., Straub, S.
                                                 C., Oliver, E. C. J., Benthuysen, J. A., Burrows, M. T., Donat, M. G.,
                                                 Feng, M., Holbrook, N. J., Moore, P. J., Scannell, H. A., SenGupta, A.,
                                                 &Wernberg, T. (2016). A hierarchical approach to defining marine
                                                 heatwaves. Progress in Oceanography, 141, 227–238. <a
-                                                    href="https://doi.org/10.1016/j.pocean.2015.12.014">doi:
+                                                    href="https://doi.org/10.1016/j.pocean.2015.12.014" target="_blank">doi:
                                                     10.1016/j.pocean.2015.12.014</a></li>
                                             <li>Hobday, A. J., Oliver, E. C. J., Gupta, A.Sen, Benthuysen, J. A.,
                                                 Burrows, M. T., Donat, M. G., Holbrook, N. J., Moore, P. J., Thomsen, M.
                                                 S., Wernberg, T., &Smale, D. A. (2018). Categorizing and naming marine
                                                 heatwaves. Oceanography, 31(2), 162–173. <a
-                                                    href="https://doi.org/10.5670/oceanog.2018.205">doi:
+                                                    href="https://doi.org/10.5670/oceanog.2018.205" target="_blank">doi:
                                                     10.5670/oceanog.2018.205</a></li>
                                             <li>Huang, B., C. Liu, V. Banzon, E. Freeman, G. Graham, B. Hankins, T.
                                                 Smith, and H.-M. Zhang,
                                                 2020: Improvements of the Daily Optimum Interpolation Sea Surface
                                                 Temperature (DOISST) Version 2.1,
                                                 Journal of Climate, 34, 2923-2939. <a
-                                                    href="https://doi.org/10.1175/JCLI-D-20-0166.1">doi:
+                                                    href="https://doi.org/10.1175/JCLI-D-20-0166.1" target="_blank">doi:
                                                     10.1175/JCLI-D-20-0166.1</a></li>
                                             <li>IPCC, 2022: Climate Change 2022: Impacts, Adaptation and Vulnerability.
                                                 Contribution of Working Group II to the Sixth Assessment Report of the
@@ -1412,18 +1587,18 @@
                                                 Langsdorf, S. Löschke, V. Möller, A. Okem, B. Rama (eds.)]. Cambridge
                                                 University Press. Cambridge University Press, Cambridge, UK and New
                                                 York, NY, USA, 3056 pp. <a
-                                                    href="https://doi.org/10.1017/9781009325844">doi:10.1017/9781009325844</a>
+                                                    href="https://doi.org/10.1017/9781009325844" target="_blank">doi:10.1017/9781009325844</a>
                                             </li>
                                             <li>Jacox, M., Alexander, M., Bograd, S., &Scott, J. (2020). Thermal
                                                 displacement by marine heatwaves. Nature., 584, 82-86. <a
-                                                    href="https://doi.org/10.1038/s41586-020-2534-z">doi:
+                                                    href="https://doi.org/10.1038/s41586-020-2534-z" target="_blank">doi:
                                                     10.1038/s41586-020-2534-z</a></li>
                                             <li>Oliver, E. C. J., Donat, M. G., Burrows, M. T., Moore, P. J., Smale, D.
                                                 A., Alexander, L.V., Benthuysen, J. A., Feng, M., SenGupta, A., Hobday,
                                                 A. J., Holbrook, N. J., Perkins-Kirkpatrick, S. E., Scannell, H. A.,
                                                 Straub, S. C., &Wernberg, T. (2018). Longer and more frequent marine
                                                 heatwaves over the past century. Nature Communications, 9(1), 1–12. <a
-                                                    href="https://doi.org/10.1038/s41467-018-03732-9">doi:
+                                                    href="https://doi.org/10.1038/s41467-018-03732-9" target="_blank">doi:
                                                     10.1038/s41467-018-03732-9</a></li>
                                             <li>Pearce, A., Lenanton, R., Jackson, G., Moore, J., Feng, M., &Gaughan, D.
                                                 (2011). The “marine heat wave” off Western Australia during the summer
@@ -1439,8 +1614,27 @@
                 </div>
             </div>
         </section>
-        <section id="gallery" class="section">
-            
+        <section id="gallery">
+            <div class="container">
+                <div class="content-wrapper text-center">
+                    <div class="content">
+                        <div class="gallery-title">
+                            <h2>Our data</h2>
+                        </div>
+                        <div class="gallery-container">
+                            <div><img src="./assets/heat wave.png" alt=""></div>
+                            <div><img src="./assets/未命名.png" alt=""></div>
+                            <div><img src="./assets/heat wave.png" alt=""></div>
+                            <div><img src="./assets/未命名.png" alt=""></div>
+                            <div><img src="./assets/heat wave.png" alt=""></div>
+                            <div><img src="./assets/未命名.png" alt=""></div>
+                            <div><img src="./assets/heat wave.png" alt=""></div>
+                            <div><img src="./assets/未命名.png" alt=""> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
         <section id="download" class="section">
             <div class="container">
@@ -1559,19 +1753,20 @@
                                 <p class="hash" data-lang="hash">
                                     #從我們的 API 連接到您的軟體<br>
                                     #lon0 與 lat0 為必要參數<br>
-                                    ##單點查詢並無時間限制 e.g. /api/mhw?lon0=135&lat0=15<br>
+                                    ##單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15<br>
                                     #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年 e.g.
-                                    /api/mhw?lon0=135&lon1&=140&lat0=15&lat1=30&start=2021-01-01<br>
+                                    /api/mhw/csv?lon0=135&lon1&=140&lat0=15&lat1=30&start=2021-01-01<br>
                                     #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段e.g.
-                                    /api/mhw?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01
+                                    /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01
                                 </p>
 
                                 <p class="url">
-                                    <span class="col4" data-lang="example">#範例 API</span><br>
+                                    <span class="col4" data-lang="example">#範例 API 請求</span><br>
                                     https://eco.odb.ntu.edu.tw/api/mhw/csv?lon0=121&lat0=25.6&lon1=121.7&lat1=25.6&start=2023-04-01&end=2023-07-01&append=sst,sst_anomaly,level,td<span
                                         class="blink">&nbsp;</span>
                                 </p>
                                 <div class="csv">
+                                    <span class="col4" data-lang="example_output">#輸出範例</span><br>
                                     <p>lon,<span class="col2">lat,</span><span class="col3">date,</span><span
                                             class="col4">level,</span><span class="col5">sst,</span><span
                                             class="col6">sst_anomaly,</span><span class="col7">td</span></p>
@@ -1623,7 +1818,11 @@
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
         <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+          
 
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll("nav a");
@@ -1822,35 +2021,35 @@
                     about_text: `Global warming and the ensuing climate crisis have led to an ongoing rise in Earth's temperatures. 
                                 Unusually high temperatures during heatwaves can be deadly on land, and the oceans are equally vulnerable to this threat. 
                                 When seawater remains abnormally warm for an extended period compared to historical average temperatures, 
-                                it's referred to as 'marine heatwaves' (MHWs) (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf">Pearce et al., 2011</a>; <a href="https://www.sciencedirect.com/science/article/pii/S0079661116000057">Hobday et al., 2016</a>). The MHWs can cover vast areas, spanning thousands of square kilometers and lasting for weeks or even months (<a href="https://www.nature.com/articles/nclimate3082">Di Lorenzo and Mantua, 2016</a>). 
+                                it's referred to as 'marine heatwaves' (MHWs) (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf" target="_blank">Pearce et al., 2011</a>; <a href="https://www.sciencedirect.com/science/article/pii/S0079661116000057" target="_blank">Hobday et al., 2016</a>). The MHWs can cover vast areas, spanning thousands of square kilometers and lasting for weeks or even months (<a href="https://www.nature.com/articles/nclimate3082" target="_blank">Di Lorenzo and Mantua, 2016</a>). 
                                 Such prolonged warming events significantly affect marine life, ecosystems, and fisheries. 
-                                To raise general awareness about MHWs, ODB provides MHWs' open data that is compiled from <a href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst">NOAA's OISST</a> data at a 0.25° x 0.25° resolution. 
-                                Following <a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al.'s (2020)</a> approach, ODB evaluates MHW occurrences for each month from 1982 to the present, covering approximately 40 years (for more details, refer to the 'Method' section). 
-                                The severity of MHWs is classified into distinct levels according to the criteria defined by <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday et al.'s (2018)</a>. 
+                                To raise general awareness about MHWs, ODB provides MHWs' open data that is compiled from <a href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA's OISST</a> data at a 0.25° x 0.25° resolution. 
+                                Following <a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al.'s (2020)</a> approach, ODB evaluates MHW occurrences for each month from 1982 to the present, covering approximately 40 years (for more details, refer to the 'Method' section). 
+                                The severity of MHWs is classified into distinct levels according to the criteria defined by <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday et al.'s (2018)</a>. 
                                 These categorized MHW levels, as well as the monthly mean SST, SST anomalies, and thermal displacements* caused by MHWs, collectively constitute our comprehensive global database. 
                                 The datasets will receive monthly updates and are available for download. 
-                                Furthermore, we provide access to <a href="https://ecodata.odb.ntu.edu.tw/geoserver/marineheatwave/wms?service=WMS&request=GetCapabilities">WMS</a> and <a 
+                                Furthermore, we provide access to <a href="https://ecodata.odb.ntu.edu.tw/geoserver/marineheatwave/wms?service=WMS&request=GetCapabilities" target="_blank">WMS</a> and <a 
                                 href="https://ecodata.odb.ntu.edu.tw/geoserver/gwc/service/wmts/?service=WMTS&request=getCapabilities">WMTS</a> layers for MHWs (see hyperlinks), 
                                 and the <a href="https://ecodata.odb.ntu.edu.tw/geoserver/
-                                marineheatwave/wms">instruction</a> for application on QGIS.<br><br>
+                                marineheatwave/wms" target="_blank">instruction</a> for application on QGIS.<br><br>
 
-                                According to the <a href="https://doi.org/10.1017/9781009325844">2022 Intergovernmental Panel on Climate Change (IPCC) report</a>,
+                                According to the <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 Intergovernmental Panel on Climate Change (IPCC) report</a>,
                                  the frequency, intensity, and duration of global MHWs have increased and will continue to rise into the future. 
-                                 Given the increasingly frequency and occurrence of MHWs (<a href="https://www.nature.com/articles/s41586-018-0383-9">Frölicher et al. 2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9">Oliver et al., 2018</a>), 
+                                 Given the increasingly frequency and occurrence of MHWs (<a href="https://www.nature.com/articles/s41586-018-0383-9" target="_blank">Frölicher et al. 2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9" target="_blank">Oliver et al., 2018</a>), 
                                  ODB aims to support research on the spatiotemporal variations of MHWs, their potential impact on marine life and provide a reference for predicting and responding to MHWs.<br><br>
                     
-                                * Thermal Displacement: In the context of MHW, 'thermal displacement' refers to the minimum distance required to follow the long-term average sea surface temperature (<a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al., 2020</a>). 
+                                * Thermal Displacement: In the context of MHW, 'thermal displacement' refers to the minimum distance required to follow the long-term average sea surface temperature (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>). 
                                 Specifically, thermal displacement signifies the range over which marine heatwaves influence surrounding marine ecosystems, 
                                 particularly concerning the movement, distribution range, and ecosystem function of marine organisms.`,
-                    fig1_text: `Marine heatwaves are classified according to <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday et al., 2018</a>. Monthly SST anomalies fall into four levels: below twice the threshold, two to three times the threshold, three to four times the threshold, 
-                                and above four times the threshold. These levels are labeled as Moderate, Strong, Severe, and Extreme, respectively. Figure adapted from <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday et al. (2018)</a>.`,
+                    fig1_text: `Marine heatwaves are classified according to <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday et al., 2018</a>. Monthly SST anomalies fall into four levels: below twice the threshold, two to three times the threshold, three to four times the threshold, 
+                                and above four times the threshold. These levels are labeled as Moderate, Strong, Severe, and Extreme, respectively. Figure adapted from <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday et al. (2018)</a>.`,
                     fig2_text: `June 2023 global data on (a) marine heatwave levels and (b) thermal displacements induced by marine heatwaves.`,
                     method_title: `ODB Marine Heatwave Definition and Calculation Method`,
                     step_a: `Using NOAA OISST v2.1 dataset, calculate the monthly mean SST from 1982 to the present.`,
                     step_b: `Calculate monthly SST anomalies :<br/>Monthly mean SST (from Step A) - Long-term monthly mean SST (from 1982-2011).`,
                     step_c: `Based on the SST anomalies, define the marine heatwave threshold values by Step C-1.`,
                     step_c_1: `The threshold for marine heatwave occurrence: The monthly SST anomalies (as in Step B) must exceed the 90th percentile of the seasonal background value*.<br>
-                    *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March (<a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al., 2020<a>).`,
+                    *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
                     step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave.`,
                     download_note: `Important Notes`,
                     download1: `The downloaded file will be in .csv format.`,
@@ -1879,7 +2078,8 @@
                     #One-point MHWs without time-span limitation<br>
                     #Bounding-box <= 90x90 in degrees: 1-year time-span limitation: e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
                     #Bounding-box > 90x90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01`,
-                    example: `#API example`,
+                    example: `#API request example`,
+                    example_output:`#output example`,
                     info: `Institute of Oceanography, NTU<br>
                     No.1, Sec. 4, Roosevelt Road<br>
                     Taipei 106 ,Taiwan<br><br>
@@ -1893,38 +2093,38 @@
                     home_subtitle: 'ODB 提供全球 0.25° x 0.25° 每月的海表平均溫度、海表溫度異常值、海洋熱浪級數與海洋熱浪引起的熱位移 (Thermal displacement) 之資料下載。',
                     about_text: `全球暖化造成的氣候危機導致地球持續升溫，陸地上的異常高溫熱浪帶來致命的威脅，而海洋也面臨相同狀況。在同一地點，
                                 若海水溫度相對與過去平均海洋溫度出現一段時間的異常高溫，這種現象被稱為海洋熱浪 (marine heatwaves, MHWs)
-                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf">Pearce et al.,
+                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf" target="_blank">Pearce et al.,
                                     2011</a>; <a
-                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057">Hobday et
+                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057" target="_blank">Hobday et
                                     al., 2016</a>)。
-                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082">Di
+                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082" target="_blank">Di
                                     Lorenzo and Mantua, 2016</a>)，而這種長時間異常高溫的環境對於海洋生物、海洋生態系統和漁業資源都造成極大的影響。
                                 為了提升民眾對海洋熱浪的認識， ODB 使用 <a
-                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst">NOAA OISST</a>（Optimum Interpolation Sea
+                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA OISST</a>（Optimum Interpolation Sea
                                 Surface Temperature 海表溫度）0.25° x 0.25° 的資料，
-                                並依 <a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et
+                                並依 <a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et
                                     al. (2020)</a> 的方法，計算了全球 1982 年至今約 40 年間每個月的海洋熱浪事件（詳見 Method），
                                 同時，我們依據 <a
-                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday
+                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
                                     et al. (2018)</a> 的分級標準，將海洋熱浪分級，
                                 建立了一個全球海洋熱浪資料庫。此資料庫內容包含：每月的海表平均溫度、海表溫度異常值、海洋熱浪級數與海洋熱浪引起的熱位移*。
                                 該資料將每月進行更新，並開放資料下載。同時，我們也開放 <a
                                     href="https://ecodata.odb.ntu.edu.tw/geoserver/marineheatwave/wms?service=WMS&request=GetCapabilities">WMS</a>
                                 與 <a href="https://ecodata.odb.ntu.edu.tw/geoserver/gwc/service/wmts/?service=WMTS&request=getCapabilities">WMTS</a> 圖層（介接網址如超連結），
                                 歡迎各界介接（若使用 QGIS 介接，可參考<a href="https://ecodata.odb.ntu.edu.tw/geoserver/
-                                marineheatwave/wms">此網頁</a>）。<br /><br />
+                                marineheatwave/wms" target="_blank">此網頁</a>）。<br /><br />
                                 
-                                根據 <a href="https://doi.org/10.1017/9781009325844">2022 年的《政府間氣候變化專門委員會》(IPCC) 報告</a>，未來全球海洋熱浪事件不僅頻率將增加，強度與持續時間也將上升。
-                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9">Frölicher et al. 2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9">Oliver et al., 2018</a>) ，
+                                根據 <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 年的《政府間氣候變化專門委員會》(IPCC) 報告</a>，未來全球海洋熱浪事件不僅頻率將增加，強度與持續時間也將上升。
+                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9" target="_blank">Frölicher et al. 2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9" target="_blank">Oliver et al., 2018</a>) ，
                                 ODB 希望透過建立海洋熱浪資料庫提升使用者對海洋熱浪的認知與意識，進一步協助學界研究海洋熱浪時空分布和變化趨勢以及對海洋生物的可能影響，同時也為預測和應對海洋熱浪提供科學數據參考。<br/><br />
                                 
                                 * Thermal Displacement: 熱位移就是在海洋熱浪的影響下，為了追隨長期平均海表溫度所需移動的最小距離 (<a
-                                    href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et al., 2020</a>)。
+                                    href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)。
                                 熱位移在本篇文獻中特指海洋熱浪對周圍海洋生態系統的影響範圍，特別是對海洋生物遷移、分布範圍和生態系統功能的影響。`,
-                    fig1_text: `海洋熱浪分級標準，依據 <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday et al., 2018</a> 分級方法，每月 SST 異常值超過門檻值 2 倍以下、2 倍至 3
+                    fig1_text: `海洋熱浪分級標準，依據 <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday et al., 2018</a> 分級方法，每月 SST 異常值超過門檻值 2 倍以下、2 倍至 3
                                 倍之間、3 倍至 4 倍之間、4倍以上，
                                 其分級為 Moderate、Strong、Severe、Extreme，共四級。圖修改自 <a
-                                href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves">Hobday
+                                href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
                                 et al. (2018)。</a>`,
                     fig2_text: `本資料庫 2023 年六月全球 (a) 海洋熱浪分級、(b) 海洋熱浪引起的熱位移。`,
                     method_title: `ODB 海洋熱浪計算方法與定義`,
@@ -1961,10 +2161,11 @@
                     mutlple: "選擇下載資料（可多選）",
                     hash: `#從我們的 API 連接到您的軟體<br>
                           #lon0 與 lat0 為必要參數<br>
-                          #單點查詢並無時間限制 e.g. /api/mhw?lon0=135&lat0=15<br>
+                          #單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15<br>
                           #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年  e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
                           #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01<br>`,
-                    example: `#範例 API`,
+                    example: `#API 請求範例`,
+                    example_output:`#輸出範例`,
                     info: ` 國立臺灣大學海洋研究所 <br>
                     10617 臺北市大安區羅斯福路四段一號<br><br>
                     Phone: +886-2-2363-6450#117<br>
