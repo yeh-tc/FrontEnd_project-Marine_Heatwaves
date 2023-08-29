@@ -566,10 +566,12 @@
                 width: 100%;
                 padding: 4px 8px;
                 height: 50px;
+
             }
 
             #download label {
                 margin-bottom: 7px;
+                color: rgb(255 255 255 / 84%);
             }
 
             #download label.required {
@@ -756,6 +758,7 @@
 
             }
 
+
             .download-subtitle h3 {
                 font-weight: 400;
                 font-size: 24px;
@@ -837,7 +840,7 @@
                 color: #6A9955;
                 font-size: 15px;
                 line-height: 24px;
-                padding: 20px 28px 28px 28px;
+                padding: 20px 28px 0px 28px;
                 font-family: 'Roboto Mono', 'Noto Sans TC', sans-serif;
             }
 
@@ -1006,6 +1009,53 @@
 
             .figwrapper2 img {
                 max-width: 95%;
+            }
+            .download-subtitle2{
+                display: flex;
+                justify-content: start;
+                padding: 20px 28px 0px 28px;
+            }
+            .download-link{
+                text-decoration: none;  /* Removes underline from link */
+   
+    display: inline-block;  
+            }
+            .download-button{
+                position: relative;
+                overflow: hidden;
+                width: 150px;
+                height: 50px;
+                border-radius: 5px;
+                border: #E16541 solid 1px;
+                color: rgb(255 255 255 / 84%);
+                background: transparent;
+                font-family: "Poppins", 'Noto Sans TC', sans-serif;
+                cursor: pointer;
+                transition: 0.02s;
+            }
+            .download-button:hover{
+                color: #E16541
+            }
+            .download-button .share {
+                font-size: 18px;
+              }
+
+            .button-text {
+                position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  gap: 10px;
+  justify-content: center;
+  color: inherit;
+  font-size: 16px;
+                
+               
+               
             }
 
             /*1680以上*/
@@ -1944,7 +1994,7 @@
                         <h2 class="section-title">Download</h2>
 
 
-                        <div class="query-form">
+                        < class="query-form">
                             <div class="formwrapper">
                                 <div class="note">
                                     <p data-lang="download_note">注意事項</p>
@@ -1969,10 +2019,12 @@
                                             www.odb.ntu.edu.tw.</li>
                                     </ul>
                                 </div>
+                                
                                 <div class="download-subtitle">
                                     <span id="download-icon" class="chevron material-symbols-outlined">download</span>
                                     <h3 data-lang="download_subtitle1">透過輸入資訊下載</h3>
                                 </div>
+                            
                                 <div class="form-row">
                                     <div class="form-group">
                                         <div class="form-input">
@@ -2047,21 +2099,28 @@
 
                             </div>
                             <div class="download-api">
+                                
                                 <div class="download-subtitle">
                                     <span id="download-icon" class="chevron material-symbols-outlined">download</span>
                                     <h3 data-lang="download_subtitle2">透過 API 取得</h3>
                                 </div>
-                                <div class="download-button">
-                                    <button class="button">
-                                        <span class="button-text">
-                                            <span> API doc </span>
-                                            <span class="material-symbols-outlined">
-                                                share
-                                            </span>
-                                        </span>
-                                    </button>
+
+
                                 </div>
+                                
                                 <div class="api-demo">
+                                    <div class="download-subtitle2">
+                                        <a href="https://eco.odb.ntu.edu.tw/api/swagger" class="download-link" target="_blank">                                    
+                                        <button class="download-button">
+                                            <span class="button-text">
+                                                <span> API doc </span>
+                                                <span class="share material-symbols-outlined">
+                                                    share
+                                                </span>
+                                            </span>
+                                        </button>
+                                    </a>
+                                    </div>
                                     <div class="hash">
                                         <p data-lang="hash">
                                             #從我們的 API 連接到您的軟體<br>
@@ -2105,6 +2164,7 @@
                                                 class="col6">1.2374820709228516,</span><span
                                                 class="col7">57.366695</span></p>
                                     </div>
+
 
                                 </div>
                             </div>
@@ -2241,13 +2301,14 @@
 
                 let downloads = gsap.utils.toArray('.download-subtitle')
                 downloads.forEach((download, i) => {
-
+                    
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: download, // Ensure the trigger is the section element itself
                             scrub: 1,
                             start: "top bottom", // Adjust the start and end points
                             end: "center top",
+                            markers:true,
                         }
                     });
 
@@ -2256,6 +2317,8 @@
                         ease: 'power4.in',
                         duration: 2,
                     });
+                     
+
 
 
                 });
