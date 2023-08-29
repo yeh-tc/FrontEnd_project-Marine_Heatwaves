@@ -695,43 +695,103 @@
             }
 
             #download .query {
-                text-align: right;
-
+                display: flex;
+                justify-content: flex-end;
             }
 
             #downloadbtn {
+                overflow: hidden;
                 width: 150px;
                 height: 50px;
-                display: inline-block;
                 font-family: 'Poppins';
                 font-weight: bold;
                 font-size: 14px;
                 padding: 10px;
                 cursor: pointer;
-                text-transform: uppercase;
                 border-radius: 5px;
                 -moz-border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -o-border-radius: 5px;
                 -ms-border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
                 background: #E16541;
                 color: rgba(255, 255, 255, 0.84);
                 border: none;
+                position: relative;
+                transform: translateZ(0);
+            }
+
+            #downloadbtn>p,
+            span {
+                position: relative;
+                z-index: 2;
+            }
+
+            #downloadbtn.waiting::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: -100%;
+                width: 300%;
+                height: 100%;
+                background: #D44B21 repeating-linear-gradient(60deg,
+                        transparent,
+                        transparent 10px,
+                        #E16541 10px,
+                        #E16541 20px);
+
+                animation: loading 1s infinite linear;
+            }
+
+            #downloadbtn p,
+            span {
+                font-weight: bold;
+            }
+
+            @keyframes loading {
+                0% {
+                    transform: translateX(25px);
+                }
+
+                100% {
+                    transform: translateX(-20px);
+                }
+            }
+
+            #downloadbtn.waiting span {
+                animation: spin 0.6s infinite linear;
+            }
+
+            @keyframes spin {
+                100% {
+                    rotate: 1turn;
+                }
             }
 
             #downloadbtn:hover {
-                background: #C0392B;
+                background: #D44B21;
             }
 
             #downloadbtn:disabled {
-                color: #252328;
-                background: #C0392B;
+                color: #2a282d;
+                background: #B03E1C;
                 cursor: not-allowed;
+            }
+
+            #downloadbtn:disabled p {
+                color: #252328;
+                font-weight: bold;
+
             }
 
             #downloadbtn:disabled:active {
                 transform: none;
             }
+
 
             .error-message {
                 width: 100%;
@@ -1039,7 +1099,7 @@
             }
 
             .download-button:hover {
-                color: #E16541
+                color: #D44B21;
             }
 
             .download-button .share {
@@ -2100,7 +2160,15 @@
 
 
                                 <div class="query">
-                                    <button id="downloadbtn">Download</button>
+                                    <button id="downloadbtn">
+
+                                        <span id="btnicon" class="material-symbols-outlined download-icon">
+                                            download
+                                        </span>
+
+
+                                        <p>Download</p>
+                                    </button>
                                 </div>
 
                             </div>
@@ -2346,7 +2414,7 @@
             )
 
             lenis.on('scroll', (e) => {
-                console.log(e)
+                //console.log(e)
             })
 
             function raf(time) {
@@ -2411,7 +2479,7 @@
                 alertBox.style.backgroundColor = '#252328';
                 alertBox.style.borderRadius = '8px';
                 alertBox.style.color = 'rgba(255, 255, 255, 0.84)';
-                alertBox.style.border = 'solid 1px #E74C3C';
+                alertBox.style.border = 'solid 1px #DE552B';
                 alertBox.style.zIndex = 1000;
                 alertBox.innerText = message;
 
@@ -2421,7 +2489,7 @@
                 closeButton.innerText = 'Close';
                 closeButton.style.width = '80px';
                 closeButton.style.height = '30px';
-                closeButton.style.backgroundColor = '#E74C3C';
+                closeButton.style.backgroundColor = '#DE552B';
                 closeButton.style.color = '#FFF';
                 closeButton.style.border = 'none';
                 closeButton.style.fontFamily = 'Poppins';
@@ -2432,7 +2500,7 @@
                 closeButton.style.right = '40px';
 
                 closeButton.onmouseover = function () {
-                    this.style.backgroundColor = '#C0392B';
+                    this.style.backgroundColor = '#D44B21';
                 };
                 closeButton.onclick = function () {
                     document.body.removeChild(alertBox);
@@ -2517,6 +2585,12 @@
                 const dataVariables = Array.from(checkboxes).filter(chk => chk.checked).map(chk => chk.value);
                 const url = `https://eco.odb.ntu.edu.tw/api/mhw/csv?lon0=${lon0}&lat0=${lat0}${lon1 ? '&lon1=' + lon1 : ''}${lat1 ? '&lat1=' + lat1 : ''}${start ? '&start=' + start : ''}${end ? '&end=' + end : ''}${dataVariables.length > 0 ? '&append=' + dataVariables.join(',') : ''}`;
 
+                const downloadBtn = document.getElementById('downloadbtn');
+                downloadBtn.classList.add('waiting');
+                const btnicon = document.getElementById("btnicon");
+                btnicon.innerHTML = !downloadBtn.classList.contains("waiting")
+                    ? "download"
+                    : "refresh";
                 //const response = await fetch(url);
                 try {
                     const response = await fetch(url);
@@ -2542,6 +2616,11 @@
                 } catch (error) {
 
                     showAlert("伺服器錯誤，請稍待重試或與技術員聯絡。There was a network error. Please try again later.");
+                } finally {
+                    downloadBtn.classList.remove('waiting');
+                    btnicon.innerHTML = !downloadBtn.classList.contains("waiting")
+                        ? "download"
+                        : "refresh";
                 }
 
             });
@@ -2551,7 +2630,6 @@
                 const languageSwitchAside = document.querySelector('#language-toggle-aside');
 
                 function synchronizeSwitches(checkedState) {
-                    console.log(checkedState);
                     languageSwitchNav.checked = checkedState;
                     languageSwitchAside.checked = checkedState;
                 }
