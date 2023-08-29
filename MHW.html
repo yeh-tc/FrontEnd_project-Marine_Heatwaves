@@ -492,15 +492,6 @@
                 font-family: "Poppins", 'Noto Sans TC', sans-serif;
             }
 
-            
-
-
-            #gallery img {
-                height: 30vh;
-                width: auto;
-                object-fit: cover;
-            }
-
             #download {
                 background: #2a282d;
             }
@@ -765,6 +756,7 @@
                 -o-border-radius: 10px;
                 -ms-border-radius: 10px;
                 padding-top: 16px;
+                word-wrap: break-word;
 
 
             }
@@ -909,22 +901,27 @@
                 font-size: 14px;
                 color: rgba(255, 255, 255, 0.84);
             }
+
             /*1680以上*/
             @media screen and (min-width:1680px) {
                 h1 {
                     font-size: 62px;
                 }
+
                 h2 {
                     font-size: 34px;
                 }
+
                 nav a {
                     font-size: 18px;
                 }
+
                 #home .home_subtitle {
                     font-size: 19px;
                     margin: 0 auto;
                     max-width: 75%;
                 }
+
                 p {
                     font-size: 18px;
                 }
@@ -932,9 +929,11 @@
                 #about .img_caption {
                     font-size: 15px;
                 }
-                #method .content h3{
+
+                #method .content h3 {
                     font-size: 28px;
                 }
+
                 #method .card h3 span {
                     font-size: 22px;
                 }
@@ -970,52 +969,65 @@
                     font-size: 17px;
                 }
 
-                .csv p,span{
+                .csv p,
+                span {
                     font-size: 17px;
                 }
 
                 #download p.hash {
                     font-size: 17px;
                 }
-                .api-demo{
+
+                .api-demo {
                     margin-bottom: 100px;
                 }
             }
+
             /*1441-1679*/
-            @media screen and (max-width: 1679px){
+            @media screen and (max-width: 1679px) {
                 h1 {
                     font-size: 56px;
                 }
+
                 #home .home_subtitle {
                     font-size: 18px;
                     margin: 0 auto;
                     max-width: 70%;
                 }
+
                 nav a {
                     font-size: 17px;
                 }
+
                 h2 {
                     font-size: 30px;
                 }
+
                 p {
                     font-size: 17px;
                 }
+
                 #about .img_responsive {
                     max-width: 48%;
                 }
+
                 #about .img_caption {
                     font-size: 15px;
                 }
-                #method .content h3{
+
+                #method .content h3 {
                     font-size: 24px;
                 }
+
                 #method .card h3 span {
                     font-size: 21px;
                 }
+
                 .active_rf {
                     font-size: 17px;
                     line-height: 2;
                 }
+
                 #download .note li {
                     font-size: 17px;
                     inline-size: auto;
@@ -1033,56 +1045,70 @@
                 #download label {
                     font-size: 17px;
                 }
+
                 .url {
                     font-size: 16.3px;
                 }
 
-                .csv p, span {
+                .csv p,
+                span {
                     font-size: 16.3px;
                 }
 
                 #download p.hash {
                     font-size: 16.3px;
                 }
-                .api-demo{
+
+                .api-demo {
                     margin-bottom: 80px;
                 }
             }
+
             /*1024-1440*/
-            @media screen and (max-width: 1440px){
+            @media screen and (max-width: 1440px) {
                 h1 {
                     font-size: 52px;
                 }
+
                 #home .home_subtitle {
                     font-size: 17.2px;
                     margin: 0 auto;
                     max-width: 70%;
                 }
+
                 nav a {
                     font-size: 16px;
                 }
+
                 h2 {
                     font-size: 30px;
                 }
+
                 p {
                     font-size: 16px;
                 }
+
                 #about .img_responsive {
                     max-width: 580px;
                 }
+
                 #about .img_caption {
                     font-size: 15px;
                 }
-                #method .content h3{
+
+                #method .content h3 {
                     font-size: 22.5px;
                 }
-                #method .card h3 span{
+
+                #method .card h3 span {
                     font-size: 20px;
                 }
+
                 .active_rf {
                     font-size: 16px;
                     line-height: 1.8;
                 }
+
                 #download .note li {
                     font-size: 16px;
                     inline-size: auto;
@@ -1100,17 +1126,20 @@
                 #download label {
                     font-size: 16px;
                 }
+
                 .url {
                     font-size: 15px;
                 }
 
-                .csv p, span {
+                .csv p,
+                span {
                     font-size: 15px;
                 }
 
                 #download p.hash {
                     font-size: 15px;
                 }
+
                 .download-subtitle h3 {
                     font-size: 22px;
                 }
@@ -1119,11 +1148,13 @@
                     padding-top: 25px;
                     font-size: 28px;
                 }
-                .api-demo{
+
+                .api-demo {
                     margin-bottom: 60px;
                 }
 
             }
+
             @media screen and (max-width: 1024px) {
                 h1 {
                     font-size: 50px;
@@ -1137,15 +1168,19 @@
                     font-size: 16.5px;
                     max-width: 78%;
                 }
-                #method .content h3{
+
+                #method .content h3 {
                     font-size: 23px;
                 }
-                #method .card h3 span{
+
+                #method .card h3 span {
                     font-size: 20px;
                 }
+
                 #about .img_caption {
                     font-size: 14px;
                 }
+
                 .download-subtitle h3 {
                     font-size: 20px;
                 }
@@ -1170,7 +1205,8 @@
                 .query-form {
                     width: 100%;
                 }
-                .api-demo{
+
+                .api-demo {
                     margin-bottom: 40px;
                 }
             }
@@ -1194,6 +1230,7 @@
                     width: 100%;
                     padding: 0px 0px;
                 }
+
                 #home .home_subtitle {
                     font-size: 16.5px;
                     max-width: 85%;
@@ -1215,7 +1252,7 @@
                     font-size: 28px;
                 }
 
-                #method .card h3 span{
+                #method .card h3 span {
                     text-align: start;
                     font-size: 19px;
                 }
@@ -1269,7 +1306,7 @@
                     font-size: 26px;
                 }
 
-                #method .card h3 span{
+                #method .card h3 span {
                     text-align: start;
                     font-size: 20px;
                 }
@@ -1306,23 +1343,56 @@
                 aside {
                     display: flex;
                 }
-                .copywright p{
-                    margin:0 10px;
+
+                .copywright p {
+                    margin: 0 10px;
                 }
             }
-            
-            
-            #gallery {
-                min-height: 50vh;
-                background: #FFFFFF;
+
+
+            #gallerysection {
+                min-height: 100vh;
+                overflow-x: hidden;
+                background-color: #FFFFFF;
+                padding: 0px;
+                display:block;
+            }
+
+            #gallerysection h2{
+                margin:3em;
+                font-size: 2rem;
                 
             }
-            .gallery-container {
-                display: flex; /* This ensures the images are laid out horizontally */
-                overflow: hidden;
+            .gallery {
+                display: flex;
+                gap: 6em;
+                justify-content: center;
+            }
+
+            .gallery-img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                max-height: 350px;
+                width: auto;
+                object-fit: cover;
             }
             
-            
+            .scroll-container {
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                flex-direction: row;
+                overflow-x: hidden;
+            }
+
+            .slide {
+                
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
 
     </head>
@@ -1427,21 +1497,26 @@
                             <p class="about_text" data-lang="about_text">
                                 全球暖化造成的氣候危機導致地球持續升溫，陸地上的異常高溫熱浪帶來致命的威脅，而海洋也面臨相同狀況。在同一地點，
                                 若海水溫度相對與過去平均海洋溫度出現一段時間的異常高溫，這種現象被稱為海洋熱浪 (marine heatwaves, MHWs)
-                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf" target="_blank">Pearce et
+                                (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf"
+                                    target="_blank">Pearce et
                                     al.,
                                     2011</a>; <a
-                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057" target="_blank">Hobday et
+                                    href="https://www.sciencedirect.com/science/article/pii/S0079661116000057"
+                                    target="_blank">Hobday et
                                     al., 2016</a>)。
-                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082" target="_blank">Di
+                                海洋熱浪的範圍可以延伸至數千平方公里，持續數周甚至數月 (<a href="https://www.nature.com/articles/nclimate3082"
+                                    target="_blank">Di
                                     Lorenzo and Mantua, 2016</a>)，而這種長時間異常高溫的環境對於海洋生物、海洋生態系統和漁業資源都造成極大的影響。
                                 為了提升民眾對海洋熱浪的認識， ODB 使用 <a
-                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA
+                                    href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst"
+                                    target="_blank">NOAA
                                     OISST</a>（Optimum Interpolation Sea
                                 Surface Temperature 海表溫度）0.25° x 0.25° 的資料，
                                 並依 <a href="https://www.nature.com/articles/s41586-020-2534-z">Jacox et
                                     al. (2020)</a> 的方法，計算了全球 1982 年至今約 40 年間每個月的海洋熱浪事件（詳見 Method），
                                 同時，我們依據 <a
-                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
+                                    href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves"
+                                    target="_blank">Hobday
                                     et al. (2018)</a> 的分級標準，將海洋熱浪分級，
                                 建立了一個全球海洋熱浪資料庫。此資料庫內容包含：每月的海表平均溫度、海表溫度異常值、海洋熱浪級數與海洋熱浪引起的熱位移*。
                                 該資料將每月進行更新，並開放資料下載。同時，我們也開放 <a
@@ -1452,29 +1527,35 @@
                                 歡迎各界介接（若使用 QGIS 介接，可參考<a href="https://ecodata.odb.ntu.edu.tw/geoserver/
                             marineheatwave/wms" target="_blank">此網頁</a>）。<br /><br />
 
-                                根據 <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 年的《政府間氣候變化專門委員會》(IPCC)
+                                根據 <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022
+                                    年的《政府間氣候變化專門委員會》(IPCC)
                                     報告</a>，未來全球海洋熱浪事件不僅頻率將增加，強度與持續時間也將上升。
-                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9" target="_blank">Frölicher et
+                                面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9"
+                                    target="_blank">Frölicher et
                                     al.
-                                    2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9" target="_blank">Oliver et
+                                    2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9"
+                                    target="_blank">Oliver et
                                     al.,
                                     2018</a>) ，
                                 ODB
                                 希望透過建立海洋熱浪資料庫提升使用者對海洋熱浪的認知與意識，進一步協助學界研究海洋熱浪時空分布和變化趨勢以及對海洋生物的可能影響，同時也為預測和應對海洋熱浪提供科學數據參考。<br /><br />
 
                                 * Thermal Displacement: 熱位移就是在海洋熱浪的影響下，為了追隨長期平均海表溫度所需移動的最小距離 (<a
-                                    href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)。
+                                    href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et
+                                    al., 2020</a>)。
                                 熱位移在本篇文獻中特指海洋熱浪對周圍海洋生態系統的影響範圍，特別是對海洋生物遷移、分布範圍和生態系統功能的影響。
                             </p>
                             <div class="figwrapper">
                                 <img src="./assets/hobday_2018.jpg" alt="" style="vertical-align:middle"
                                     class="img_responsive" /><br>
                                 <div class="img_caption" data-lang="fig1_text">海洋熱浪分級標準，依據 <a
-                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
+                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves"
+                                        target="_blank">Hobday
                                         et al., 2018</a> 分級方法，每月 SST 異常值超過門檻值 2 倍以下、2 倍至 3
                                     倍之間、3 倍至 4 倍之間、4倍以上，
                                     其分級為 Moderate、Strong、Severe、Extreme，共四級。圖修改自 <a
-                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday
+                                        href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves"
+                                        target="_blank">Hobday
                                         et al. (2018)。</a></div>
                             </div>
                         </div>
@@ -1521,7 +1602,8 @@
                                     <h3><span class="underline">Step C-1</span></h3>
                                     <p data-lang="step_c_1">每月 SST 異常值（算法如 Step B）至少高於季節背景值*的第 90 個百分位數。<br />
                                         *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1、2、3 月全部每月 SST 異常值的第 90
-                                        個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al.,
+                                        個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z"
+                                            target="_blank">Jacox et al.,
                                             2020</a>)</p>
                                 </div>
                                 <div class="card">
@@ -1532,11 +1614,11 @@
                             </div>
                             <div class="card">
                                 <h3><span class="underline">GitHub</span></h3>
-                                <p>Jacox et al., 2020: <a
-                                        href="https://github.com/mjacox/Thermal_Displacement/" target="_blank">https://github.com/mjacox/Thermal_Displacement</a>
+                                <p>Jacox et al., 2020: <a href="https://github.com/mjacox/Thermal_Displacement/"
+                                        target="_blank">https://github.com/mjacox/Thermal_Displacement</a>
                                     (in Matlab)</p>
-                                <p>ODB: <a
-                                        href="https://github.com/yeh-tc/Python_project-Thermal_Displacement" target="_blank">https://github.com/yeh-tc/Python_project-Thermal_Displacement</a>
+                                <p>ODB: <a href="https://github.com/yeh-tc/Python_project-Thermal_Displacement"
+                                        target="_blank">https://github.com/yeh-tc/Python_project-Thermal_Displacement</a>
                                     (in Python)</p>
                             </div>
                             <div class="card">
@@ -1554,18 +1636,21 @@
                                         <ul>
                                             <li>Di Lorenzo, E., &Mantua, N. (2016). Multi-year persistence of the
                                                 2014/15 North Pacific marine heatwave. Nature Climate Change , 6(11),
-                                                1042–1047. <a href="http://dx.doi.org/10.1038/nclimate3082" target="_blank">doi:
+                                                1042–1047. <a href="http://dx.doi.org/10.1038/nclimate3082"
+                                                    target="_blank">doi:
                                                     10.1038/nclimate3082</a></li>
                                             <li>Frölicher, T. L., Fischer, E. M., &Gruber, N. (2018). Marine heatwaves
                                                 under global warming. Nature, 560(7718), 360–364. <a
-                                                    href="https://doi.org/10.1038/s41586-018-0383-9" target="_blank">doi:
+                                                    href="https://doi.org/10.1038/s41586-018-0383-9"
+                                                    target="_blank">doi:
                                                     10.1038/s41586-018-0383-9</a></li>
                                             <li>Hobday, A. J., Alexander, L.V., Perkins, S. E., Smale, D. A., Straub, S.
                                                 C., Oliver, E. C. J., Benthuysen, J. A., Burrows, M. T., Donat, M. G.,
                                                 Feng, M., Holbrook, N. J., Moore, P. J., Scannell, H. A., SenGupta, A.,
                                                 &Wernberg, T. (2016). A hierarchical approach to defining marine
                                                 heatwaves. Progress in Oceanography, 141, 227–238. <a
-                                                    href="https://doi.org/10.1016/j.pocean.2015.12.014" target="_blank">doi:
+                                                    href="https://doi.org/10.1016/j.pocean.2015.12.014"
+                                                    target="_blank">doi:
                                                     10.1016/j.pocean.2015.12.014</a></li>
                                             <li>Hobday, A. J., Oliver, E. C. J., Gupta, A.Sen, Benthuysen, J. A.,
                                                 Burrows, M. T., Donat, M. G., Holbrook, N. J., Moore, P. J., Thomsen, M.
@@ -1586,19 +1671,21 @@
                                                 M. Tignor, E.S. Poloczanska, K. Mintenbeck, A. Alegría, M. Craig, S.
                                                 Langsdorf, S. Löschke, V. Möller, A. Okem, B. Rama (eds.)]. Cambridge
                                                 University Press. Cambridge University Press, Cambridge, UK and New
-                                                York, NY, USA, 3056 pp. <a
-                                                    href="https://doi.org/10.1017/9781009325844" target="_blank">doi:10.1017/9781009325844</a>
+                                                York, NY, USA, 3056 pp. <a href="https://doi.org/10.1017/9781009325844"
+                                                    target="_blank">doi:10.1017/9781009325844</a>
                                             </li>
                                             <li>Jacox, M., Alexander, M., Bograd, S., &Scott, J. (2020). Thermal
                                                 displacement by marine heatwaves. Nature., 584, 82-86. <a
-                                                    href="https://doi.org/10.1038/s41586-020-2534-z" target="_blank">doi:
+                                                    href="https://doi.org/10.1038/s41586-020-2534-z"
+                                                    target="_blank">doi:
                                                     10.1038/s41586-020-2534-z</a></li>
                                             <li>Oliver, E. C. J., Donat, M. G., Burrows, M. T., Moore, P. J., Smale, D.
                                                 A., Alexander, L.V., Benthuysen, J. A., Feng, M., SenGupta, A., Hobday,
                                                 A. J., Holbrook, N. J., Perkins-Kirkpatrick, S. E., Scannell, H. A.,
                                                 Straub, S. C., &Wernberg, T. (2018). Longer and more frequent marine
                                                 heatwaves over the past century. Nature Communications, 9(1), 1–12. <a
-                                                    href="https://doi.org/10.1038/s41467-018-03732-9" target="_blank">doi:
+                                                    href="https://doi.org/10.1038/s41467-018-03732-9"
+                                                    target="_blank">doi:
                                                     10.1038/s41467-018-03732-9</a></li>
                                             <li>Pearce, A., Lenanton, R., Jackson, G., Moore, J., Feng, M., &Gaughan, D.
                                                 (2011). The “marine heat wave” off Western Australia during the summer
@@ -1614,28 +1701,7 @@
                 </div>
             </div>
         </section>
-        <section id="gallery">
-            <div class="container">
-                <div class="content-wrapper text-center">
-                    <div class="content">
-                        <div class="gallery-title">
-                            <h2>Our data</h2>
-                        </div>
-                        <div class="gallery-container">
-                            <div><img src="./assets/heat wave.png" alt=""></div>
-                            <div><img src="./assets/未命名.png" alt=""></div>
-                            <div><img src="./assets/heat wave.png" alt=""></div>
-                            <div><img src="./assets/未命名.png" alt=""></div>
-                            <div><img src="./assets/heat wave.png" alt=""></div>
-                            <div><img src="./assets/未命名.png" alt=""></div>
-                            <div><img src="./assets/heat wave.png" alt=""></div>
-                            <div><img src="./assets/未命名.png" alt=""> </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        
         <section id="download" class="section">
             <div class="container">
                 <div class="content-wrapper text-center">
@@ -1797,6 +1863,37 @@
                 </div>
             </div>
         </section>
+        <!--<section id="gallerysection" class="section">
+           
+            <h2>Gallery</h2>
+            <div class="scroll-container">
+                <div class="slide">
+                    <div class="group gallery">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="group gallery">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="group gallery">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                        <img class="gallery-img" src="./assets/heat wave.png">
+                        <img class="gallery-img" src="./assets/未命名.png">
+                    </div>
+                </div>
+            </div>
+        
+        </section>-->
         <footer id="footer" class="footer">
             <div class="footer-top">
                 <div class="footer-container">
@@ -1817,12 +1914,25 @@
                 <p>Copyright &copy;2023 海洋學門資料庫-Ocean Data Bank (ODB). All Rights Reserved</p>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
         <script>
             gsap.registerPlugin(ScrollTrigger);
+            let slides = gsap.utils.toArray('.slide')
+            console.log(slides.length)
+            let scrollTween = gsap.to(slides, {
+                xPercent: -100 * (slides.length - 1),
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '#gallerysection',
+                    pin: true,
+                    scrub: 0.1,
+                    end: "+=3000"
+                }
 
-          
+            })
+
 
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll("nav a");
@@ -2079,7 +2189,7 @@
                     #Bounding-box <= 90x90 in degrees: 1-year time-span limitation: e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
                     #Bounding-box > 90x90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01`,
                     example: `#API request example`,
-                    example_output:`#output example`,
+                    example_output: `#output example`,
                     info: `Institute of Oceanography, NTU<br>
                     No.1, Sec. 4, Roosevelt Road<br>
                     Taipei 106 ,Taiwan<br><br>
@@ -2165,7 +2275,7 @@
                           #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年  e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
                           #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01<br>`,
                     example: `#API 請求範例`,
-                    example_output:`#輸出範例`,
+                    example_output: `#輸出範例`,
                     info: ` 國立臺灣大學海洋研究所 <br>
                     10617 臺北市大安區羅斯福路四段一號<br><br>
                     Phone: +886-2-2363-6450#117<br>
