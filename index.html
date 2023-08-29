@@ -1010,17 +1010,21 @@
             .figwrapper2 img {
                 max-width: 95%;
             }
-            .download-subtitle2{
+
+            .download-subtitle2 {
                 display: flex;
                 justify-content: start;
                 padding: 20px 28px 0px 28px;
             }
-            .download-link{
-                text-decoration: none;  /* Removes underline from link */
-   
-    display: inline-block;  
+
+            .download-link {
+                text-decoration: none;
+                /* Removes underline from link */
+
+                display: inline-block;
             }
-            .download-button{
+
+            .download-button {
                 position: relative;
                 overflow: hidden;
                 width: 150px;
@@ -1033,29 +1037,31 @@
                 cursor: pointer;
                 transition: 0.02s;
             }
-            .download-button:hover{
+
+            .download-button:hover {
                 color: #E16541
             }
+
             .download-button .share {
                 font-size: 18px;
-              }
+            }
 
             .button-text {
                 position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: 0.3s;
-  gap: 10px;
-  justify-content: center;
-  color: inherit;
-  font-size: 16px;
-                
-               
-               
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                transition: 0.3s;
+                gap: 10px;
+                justify-content: center;
+                color: inherit;
+                font-size: 16px;
+
+
+
             }
 
             /*1680以上*/
@@ -2019,12 +2025,12 @@
                                             www.odb.ntu.edu.tw.</li>
                                     </ul>
                                 </div>
-                                
+
                                 <div class="download-subtitle">
                                     <span id="download-icon" class="chevron material-symbols-outlined">download</span>
                                     <h3 data-lang="download_subtitle1">透過輸入資訊下載</h3>
                                 </div>
-                            
+
                                 <div class="form-row">
                                     <div class="form-group">
                                         <div class="form-input">
@@ -2099,18 +2105,19 @@
 
                             </div>
                             <div class="download-api">
-                                
+
                                 <div class="download-subtitle">
                                     <span id="download-icon" class="chevron material-symbols-outlined">download</span>
                                     <h3 data-lang="download_subtitle2">透過 API 取得</h3>
                                 </div>
 
 
-                                </div>
-                                
-                                <div class="api-demo">
-                                    <div class="download-subtitle2">
-                                        <a href="https://eco.odb.ntu.edu.tw/api/swagger" class="download-link" target="_blank">                                    
+                            </div>
+
+                            <div class="api-demo">
+                                <div class="download-subtitle2">
+                                    <a href="https://eco.odb.ntu.edu.tw/api/swagger" class="download-link"
+                                        target="_blank">
                                         <button class="download-button">
                                             <span class="button-text">
                                                 <span> API doc </span>
@@ -2120,59 +2127,55 @@
                                             </span>
                                         </button>
                                     </a>
-                                    </div>
-                                    <div class="hash">
-                                        <p data-lang="hash">
-                                            #從我們的 API 連接到您的軟體<br>
-                                            #lon0 與 lat0 為必要參數<br>
-                                            ##單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15<br>
-                                            #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年 e.g.
-                                            /api/mhw/csv?lon0=135&lon1&=140&lat0=15&lat1=30&start=2021-01-01<br>
-                                            #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段e.g.
-                                            /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01
-                                        </p>
-                                    </div>
-                                    <p class="url">
-                                        <span class="col4" data-lang="example">#範例 API 請求</span><br>
-                                        https://eco.odb.ntu.edu.tw/api/mhw/csv?lon0=121&lat0=25.6&lon1=121.7&lat1=25.6&start=2023-04-01&end=2023-07-01&append=sst,sst_anomaly,level,td<span
-                                            class="blink">&nbsp;</span>
-                                    </p>
-                                    <div class="csv">
-                                        <span class="col4" data-lang="example_output">#輸出範例</span><br>
-                                        <p>lon,<span class="col2">lat,</span><span class="col3">date,</span><span
-                                                class="col4">level,</span><span class="col5">sst,</span><span
-                                                class="col6">sst_anomaly,</span><span class="col7">td</span></p>
-                                        <p>120.875,<span class="col2">25.375,</span><span
-                                                class="col3">2023-04-01,</span><span class="col4">0,</span><span
-                                                class="col5">22.426334,</span><span
-                                                class="col6">0.6179904937744141,</span>
-                                        </p>
-                                        <p>120.875,<span class="col2">25.375,</span><span
-                                                class="col3">2023-05-01,</span><span class="col4">0,</span><span
-                                                class="col5">25.035807,</span><span
-                                                class="col6">0.5337085723876953,</span>
-                                        </p>
-                                        <p>120.875,<span class="col2">25.375,</span><span
-                                                class="col3">2023-06-01,</span><span class="col4">1,</span><span
-                                                class="col5">27.591667,</span><span
-                                                class="col6">1.1035003662109375,</span><span
-                                                class="col7">141.22131</span>
-                                        </p>
-                                        <p>120.875,<span class="col2">25.375,</span><span
-                                                class="col3">2023-07-01,</span><span class="col4">1,</span><span
-                                                class="col5">28.8, </span><span
-                                                class="col6">1.2374820709228516,</span><span
-                                                class="col7">57.366695</span></p>
-                                    </div>
-
-
                                 </div>
-                            </div>
+                                <div class="hash">
+                                    <p data-lang="hash">
+                                        #從我們的 API 連接到您的軟體<br>
+                                        #lon0 與 lat0 為必要參數<br>
+                                        ##單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15<br>
+                                        #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年 e.g.
+                                        /api/mhw/csv?lon0=135&lon1&=140&lat0=15&lat1=30&start=2021-01-01<br>
+                                        #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段e.g.
+                                        /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01
+                                    </p>
+                                </div>
+                                <p class="url">
+                                    <span class="col4" data-lang="example">#範例 API 請求</span><br>
+                                    https://eco.odb.ntu.edu.tw/api/mhw/csv?lon0=121&lat0=25.6&lon1=121.7&lat1=25.6&start=2023-04-01&end=2023-07-01&append=sst,sst_anomaly,level,td<span
+                                        class="blink">&nbsp;</span>
+                                </p>
+                                <div class="csv">
+                                    <span class="col4" data-lang="example_output">#輸出範例</span><br>
+                                    <p>lon,<span class="col2">lat,</span><span class="col3">date,</span><span
+                                            class="col4">level,</span><span class="col5">sst,</span><span
+                                            class="col6">sst_anomaly,</span><span class="col7">td</span></p>
+                                    <p>120.875,<span class="col2">25.375,</span><span
+                                            class="col3">2023-04-01,</span><span class="col4">0,</span><span
+                                            class="col5">22.426334,</span><span class="col6">0.6179904937744141,</span>
+                                    </p>
+                                    <p>120.875,<span class="col2">25.375,</span><span
+                                            class="col3">2023-05-01,</span><span class="col4">0,</span><span
+                                            class="col5">25.035807,</span><span class="col6">0.5337085723876953,</span>
+                                    </p>
+                                    <p>120.875,<span class="col2">25.375,</span><span
+                                            class="col3">2023-06-01,</span><span class="col4">1,</span><span
+                                            class="col5">27.591667,</span><span
+                                            class="col6">1.1035003662109375,</span><span class="col7">141.22131</span>
+                                    </p>
+                                    <p>120.875,<span class="col2">25.375,</span><span
+                                            class="col3">2023-07-01,</span><span class="col4">1,</span><span
+                                            class="col5">28.8, </span><span class="col6">1.2374820709228516,</span><span
+                                            class="col7">57.366695</span></p>
+                                </div>
 
-                        </div>
+
+                            </div>
                     </div>
 
                 </div>
+            </div>
+
+            </div>
             </div>
         </section>
         <footer id="footer" class="footer">
@@ -2301,14 +2304,14 @@
 
                 let downloads = gsap.utils.toArray('.download-subtitle')
                 downloads.forEach((download, i) => {
-                    
+
                     let tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: download, // Ensure the trigger is the section element itself
                             scrub: 1,
                             start: "top bottom", // Adjust the start and end points
                             end: "center top",
-                            markers:true,
+                            //markers: true,
                         }
                     });
 
@@ -2317,7 +2320,7 @@
                         ease: 'power4.in',
                         duration: 2,
                     });
-                     
+
 
 
 
