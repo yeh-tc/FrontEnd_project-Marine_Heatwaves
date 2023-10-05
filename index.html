@@ -387,7 +387,7 @@
             }
 
 
-            #about .img_responsive {
+            .img_responsive {
                 width: 100%;
                 height: auto;
                 display: block;
@@ -398,12 +398,12 @@
 
             .img_caption {
                 color: #565656;
-                font-size: 0.85rem;
+                font-size: clamp(0.85rem, 5vw, 1rem);
                 display: block;
                 max-width: 70%;
                 margin-left: auto;
                 margin-right: auto;
-                padding-top: 1vh;
+                padding-top: 2em;
             }
 
 
@@ -1007,9 +1007,9 @@
 
 
             .bottom-fig {
-                display: flex;
-                justify-content: space-around;
-                padding-bottom: 50px;
+                /*display: flex;
+                justify-content: space-around;*/
+                padding-bottom: 40px;
             }
 
             .figwrapper2 {
@@ -1019,9 +1019,9 @@
 
             }
 
-            .figwrapper2 img {
+            /*.figwrapper2 img {
                 max-width: 95%;
-            }
+            }*/
 
             .download-subtitle2 {
                 display: flex;
@@ -1101,12 +1101,10 @@
                 }
 
                 #about .img_caption {
-                    font-size: 15px;
                     max-width: 650px;
                 }
 
                 #method .img_caption {
-                    font-size: 15px;
                     max-width: 100%;
                 }
 
@@ -1118,8 +1116,11 @@
                     font-size: 22px;
                 }
 
-                #about .img_responsive {
+                .img_responsive {
                     max-width: 670px;
+                }
+                .img_responsive .hw{
+                    max-width: 75%;
                 }
 
                 #download .note li {
@@ -1187,17 +1188,15 @@
                     font-size: 17px;
                 }
 
-                #about .img_responsive {
+                .img_responsive {
                     max-width: 48%;
                 }
 
                 #about .img_caption {
-                    font-size: 15px;
                     max-width: 48%;
                 }
 
                 #method .img_caption {
-                    font-size: 15px;
                     max-width: 100%;
                 }
 
@@ -1273,17 +1272,15 @@
                     font-size: 16px;
                 }
 
-                #about .img_responsive {
+                .img_responsive {
                     max-width: 580px;
                 }
 
                 #about .img_caption {
-                    font-size: 15px;
                     max-width: 500px;
                 }
 
                 #method .img_caption {
-                    font-size: 15px;
                     max-width: 100%;
                 }
 
@@ -1366,14 +1363,6 @@
                     font-size: 20px;
                 }
 
-                #about .img_caption {
-                    font-size: 14px;
-                }
-
-                #method .img_caption {
-                    font-size: 14px;
-                }
-
                 .download-subtitle h3 {
                     font-size: 20px;
                 }
@@ -1426,8 +1415,6 @@
                 }
 
                 #method .img_caption {
-                    font-size: 14px;
-                    padding: 0 3vw;
                     text-align: center;
 
                 }
@@ -1447,9 +1434,10 @@
                     -ms-justify-content: center;
                 }
 
-                .figwrapper2 {
+
+                /*.figwrapper2 {
                     padding-bottom: 12%;
-                }
+                }*/
             }
 
             @media screen and (max-width: 768px) {
@@ -1558,7 +1546,53 @@
                     margin: 0 10px;
                 }
             }
+            .dropdown{
+               display: flex;
+               justify-content: space-around;
+            }
+            .select {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                font-family: 'Poppins','Noto Sans TC', sans-serif;
+                font-size: 14px;
+                color: #565656;
+                width: 30%;
+                height:40px;
+                padding: 8px 15px;
+                background-color: #fff;
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -o-border-radius: 5px;
+                -ms-border-radius: 5px;
+                border: #E16541 solid 1px;
 
+            }
+            .select:hover{
+                background-color: #fffaf8;
+            }
+            #showbtn {
+                width: 30%;
+                height: 40px;
+                font-family: 'Poppins','Noto Sans TC', sans-serif;
+                font-size: 14px;
+                padding:  8px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -o-border-radius: 5px;
+                -ms-border-radius: 5px;
+                display: grid;
+                place-content: center;
+                background: #fff;
+                color: rgba(255, 255, 255, 0.84);
+                border: #E16541 solid 1px;
+            }
+            #showbtn:hover{
+                background-color: #fffaf8;
+            }
         </style>
 
     </head>
@@ -1776,31 +1810,57 @@
                             </div>
                             <div class="card">
                                 <h3><span class="underline">Results</span></h3>
+                               <div class="dropdown">
+                                <select class="select" id="month">
+                                    <option value="hide"  data-lang="month">-- Month --</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select> 
+                                <select  class="select" id="year">
+                                    <option value="hide"  data-lang="year">-- Year --</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                                <button id="showbtn" >
+                                    <p data-lang="showbtn">Show</p>
+                                </button>
+                               </div>
                                 <div class="bottom-fig">
                                     <div class="figwrapper2">
-                                        <img src="./assets/2023_07_level.jpg" alt="" style="vertical-align:middle"
-                                            class="img_responsive" /><br>
-                                        <div class="img_caption" data-lang="result_1">
+                                        <img src="./assets/202307_level.jpg" alt="" style="vertical-align:middle"
+                                            class="img_responsive hw" /><br>
+                                        <!--<div class="img_caption" data-lang="result_1">
                                             本資料庫 2023 年七月全球的海洋熱浪分級。
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="figwrapper2">
-                                        <img src="./assets/2023_07_td.jpg" alt="" style="vertical-align:middle"
-                                            class="img_responsive" /><br>
-                                        <div class="img_caption" data-lang="result_2">
-                                            本資料庫 2023 年七月全球的熱位移。
-                                        </div>
+                                        <img src="./assets/202308_level.jpg" alt="" class="img_responsive hw" /><br>
+                                        <!--<div class="img_caption" data-lang="result_2">
+                                            本資料庫 2023 年八月全球的熱位移。
+                                        </div>-->
                                     </div>
 
 
                                 </div>
-                                <div class="figwrapper2">
-                                    <img src="./assets/time_series_example.jpg" alt="" style="vertical-align:middle"
+                                <!--<div class="figwrapper2">
+                                    <img src="./assets/time_series_example_202308.jpg" alt="" style="vertical-align:middle"
                                         class="img_responsive" /><br>
                                     <div class="img_caption" data-lang="result_3">
-                                        於臺灣近海東經 122.625 度、北緯 25.375 度，2020 六月至 2020 七月的海洋熱浪分級時間序列。
+                                        於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 八月的海洋熱浪分級時間序列。
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="card">
                                 <h3><span class="underline">GitHub</span></h3>
@@ -1831,7 +1891,7 @@
                                                 6(11),
                                                 1042–1047. <a href="http://dx.doi.org/10.1038/nclimate3082"
                                                     target="_blank">doi:
-                                                    10.1038/nclimate3082</a></ㄣ>
+                                                    10.1038/nclimate3082</a></p>
                                             <p class="paper">Frölicher, T. L., Fischer, E. M., &Gruber, N. (2018).
                                                 Marine
                                                 heatwaves
@@ -1980,14 +2040,14 @@
                                     <div class="form-group">
                                         <div class="form-input">
                                             <label for="lon0" class="required" data-lang="start_lon">起始經度</label>
-                                            <input type="number" id="lon0" min="-180" max="180" required>
+                                            <input type="number" id="lon0" min="-180" max="180" step="any" required>
                                             <div class="error-message" data-for="lon0" data-lang="lon0">須為介於
                                                 -180 到 180
                                                 的數字。</div>
                                         </div>
                                         <div class="form-input">
                                             <label for="lon1" data-lang="end_lon">結束經度</label>
-                                            <input type="number" id="lon1" min="-180" max="180">
+                                            <input type="number" id="lon1" min="-180" max="180" step="any">
                                             <div class="error-message" data-for="lon1" data-lang="lon1">須介於 -180
                                                 到 180
                                                 的數字，或空白。</div>
@@ -1996,14 +2056,14 @@
                                     <div class="form-group">
                                         <div class="form-input">
                                             <label for="lat0" class="required" data-lang="start_lat">起始緯度</label>
-                                            <input type="number" id="lat0" min="-90" max="90" required>
+                                            <input type="number" id="lat0" min="-90" max="90" step="any" required>
                                             <div class="error-message" data-for="lat0" data-lang="lat0">須介於 -90
                                                 到 90
                                                 的數字。</div>
                                         </div>
                                         <div class="form-input">
                                             <label for="lat1" data-lang="end_lat">結束緯度</label>
-                                            <input type="number" id="lat1" min="-90" max="90">
+                                            <input type="number" id="lat1" min="-90" max="90" step="any">
                                             <div class="error-message" data-for="lat1" data-lang="lat1">須介於 -90
                                                 到 90
                                                 的數字，或空白。</div>
@@ -2422,9 +2482,12 @@
                     step_c_1: `The threshold for marine heatwave occurrence: The monthly SST anomalies (as in Step B) must exceed the 90th percentile of the seasonal background value*.<br>
                     *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
                     step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave.`,
+                    showbtn:"Show",
+                    month:"Month",
+                    year:"Year",
                     result_1: `July 2023 global data on marine heatwave levels.`,
-                    result_2: `July 2023 global data on thermal displacements induced by marine heatwaves.`,
-                    result_3: `In the waters near Taiwan at longitude 122.625°E and latitude 25.375°N, the time series of the marine heatwave level from January 2020 to July 2023`,
+                    result_2: `August 2023 global data on marine heatwave levels.`,
+                    result_3: `In the waters near Taiwan at longitude 122.625°E and latitude 25.375°N, the time series of the marine heatwave level from January 2020 to August 2023.`,
                     download_note: `Important Notes`,
                     download1: `The downloaded file will be in .csv format.`,
                     download2: `Longitude range: -180° ~ 180°, Latitude range: -90° ~ 90°, Time range: 1982-Jan-01 to the previous month.`,
@@ -2513,9 +2576,12 @@
                                 *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1、2、3 月全部每月 SST 異常值的第 90
                                 個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)`,
                     step_d: `比較 Step B 與 Step C 即得知海洋熱浪發生與否及 SST 異常值。<br />若有熱浪，找出海洋熱浪引起的熱位移。`,
+                    showbtn: `顯示圖片`,
+                    month:"月",
+                    year:"年",
                     result_1: `本資料庫 2023 年七月全球的海洋熱浪分級。`,
-                    result_2: `本資料庫 2023 年七月全球的熱位移。`,
-                    result_3: `於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 七月的海洋熱浪分級時間序列。`,
+                    result_2: `本資料庫 2023 年八月全球的海洋熱浪分級。`,
+                    result_3: `於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 八月的海洋熱浪分級時間序列。`,
                     download_note: `注意事項`,
                     download1: `下載之檔案為 .csv`,
                     download2: `經度範圍：-180&deg; ~ 180&deg;，緯度範圍：-90&deg; ~ 90&deg;，時間範圍：1982-Jan-01 ~ 上個月。`,
@@ -2565,6 +2631,14 @@
                     element.innerHTML = translations[lang][translationKey];
                 });
             }
+
+            const selects = document.querySelectorAll('select');
+            console.log(selects);
+            selects.forEach((select)=>{
+                console.log(select)
+                const numberOfOption=select.length
+                console.log(numberOfOption)
+            })
         </script>
     </body>
 
