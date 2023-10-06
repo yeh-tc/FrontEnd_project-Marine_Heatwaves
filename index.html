@@ -352,6 +352,7 @@
                 color: #E16541;
                 text-align: center;
             }
+
             #home p {
                 margin: auto;
                 max-width: 30em;
@@ -1009,19 +1010,18 @@
             .bottom-fig {
                 /*display: flex;
                 justify-content: space-around;*/
-                padding-bottom: 40px;
+                padding: 40px 0px;
             }
 
             .figwrapper2 {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-
             }
 
-            /*.figwrapper2 img {
-                max-width: 95%;
-            }*/
+            .figwrapper2 img {
+                max-width: 750px;
+            }
 
             .download-subtitle2 {
                 display: flex;
@@ -1119,8 +1119,9 @@
                 .img_responsive {
                     max-width: 670px;
                 }
-                .img_responsive .hw{
-                    max-width: 75%;
+
+                .img_responsive .hw {
+                    max-width: 1000px;
                 }
 
                 #download .note li {
@@ -1162,6 +1163,10 @@
                 .api-demo {
                     margin-bottom: 100px;
                 }
+
+                .figwrapper2 img {
+                    max-width: 750px;
+                }
             }
 
             /*1441-1679*/
@@ -1189,7 +1194,7 @@
                 }
 
                 .img_responsive {
-                    max-width: 48%;
+                    max-width: 600px;
                 }
 
                 #about .img_caption {
@@ -1247,6 +1252,7 @@
                 .api-demo {
                     margin-bottom: 80px;
                 }
+
 
             }
 
@@ -1390,6 +1396,10 @@
 
                 .api-demo {
                     margin-bottom: 40px;
+                }
+
+                .figwrapper2 img {
+                    max-width: 100%;
                 }
 
             }
@@ -1545,39 +1555,60 @@
                 .copywright p {
                     margin: 0 10px;
                 }
+
+                .dropdown {
+                    flex-direction: column;
+                    -moz-flex-direction: column;
+                    -webkit-flex-direction: column;
+                    -o-flex-direction: column;
+                    -ms-flex-direction: column;
+                    margin: 0px;
+                    justify-content: center;
+                    -moz-justify-content: center;
+                    -webkit-justify-content: center;
+                    -o-justify-content: center;
+                    -ms-justify-content: center;
+                }
             }
-            .dropdown{
-               display: flex;
-               justify-content: space-around;
+            .dropdownAll{
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                gap:3em;
             }
-            .select {
-                cursor: pointer;
-                display: inline-block;
-                position: relative;
-                font-family: 'Poppins','Noto Sans TC', sans-serif;
-                font-size: 14px;
+           .select-list{
+            width: 100%;
+           }
+            select{
+                width: 100%;
                 color: #565656;
-                width: 30%;
-                height:40px;
+                border: #E16541 solid 1px;
+                box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -moz-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -webkit-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -o-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -ms-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                height: 50px;
+                font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+                font-size: 14px;
                 padding: 8px 15px;
-                background-color: #fff;
+                cursor: pointer;
                 border-radius: 5px;
                 -moz-border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -o-border-radius: 5px;
                 -ms-border-radius: 5px;
-                border: #E16541 solid 1px;
+            }
+            select:hover{
+                background-color: #fff1ec;
+            }
 
-            }
-            .select:hover{
-                background-color: #fffaf8;
-            }
             #showbtn {
-                width: 30%;
-                height: 40px;
-                font-family: 'Poppins','Noto Sans TC', sans-serif;
+                width: 100%;
+                height: 50px;
+                font-family: 'Poppins', 'Noto Sans TC', sans-serif;
                 font-size: 14px;
-                padding:  8px 15px;
+                padding: 8px 15px;
                 cursor: pointer;
                 border-radius: 5px;
                 -moz-border-radius: 5px;
@@ -1587,11 +1618,17 @@
                 display: grid;
                 place-content: center;
                 background: #fff;
-                color: rgba(255, 255, 255, 0.84);
+                color: #565656;
                 border: #E16541 solid 1px;
+                box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -moz-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -webkit-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -o-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
+                -ms-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
             }
-            #showbtn:hover{
-                background-color: #fffaf8;
+
+            #showbtn:hover {
+                background-color: #fff1ec;
             }
         </style>
 
@@ -1810,43 +1847,47 @@
                             </div>
                             <div class="card">
                                 <h3><span class="underline">Results</span></h3>
-                               <div class="dropdown">
-                                <select class="select" id="month">
-                                    <option value="hide"  data-lang="month">-- Month --</option>
-                                    <option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>
-                                    <option value="05">05</option>
-                                    <option value="06">06</option>
-                                    <option value="07">07</option>
-                                    <option value="08">08</option>
-                                    <option value="09">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select> 
-                                <select  class="select" id="year">
-                                    <option value="hide"  data-lang="year">-- Year --</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
-                                </select>
-                                <button id="showbtn" >
-                                    <p data-lang="showbtn">Show</p>
-                                </button>
-                               </div>
+                                <div class="dropdownAll">
+                                    
+                                    <div class="select-list">
+                                        <select name="month" id="month">
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="select-list">
+                                        <select name="year" id="year">
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                        </select>
+                                    </div>
+                                    <button id="showbtn">
+                                        <p data-lang="showbtn">Show</p>
+                                    </button>
+                                </div>
                                 <div class="bottom-fig">
                                     <div class="figwrapper2">
-                                        <img src="./assets/202307_level.jpg" alt="" style="vertical-align:middle"
-                                            class="img_responsive hw" /><br>
+                                        <img src="./assets/202308_level.jpg" alt="" style="vertical-align:middle"
+                                            class="img_responsive" /><br>
                                         <!--<div class="img_caption" data-lang="result_1">
                                             本資料庫 2023 年七月全球的海洋熱浪分級。
                                         </div>-->
                                     </div>
                                     <div class="figwrapper2">
-                                        <img src="./assets/202308_level.jpg" alt="" class="img_responsive hw" /><br>
+                                        <img src="./assets/202308_td.jpg" alt="" class="img_responsive" /><br>
                                         <!--<div class="img_caption" data-lang="result_2">
                                             本資料庫 2023 年八月全球的熱位移。
                                         </div>-->
@@ -2074,22 +2115,22 @@
                                     <p data-lang="mutlple">選擇下載資料（可多選）</p>
                                     <label class="material-checkbox">
                                         <input type="checkbox" value="sst">
-                                        <span class="checkmark" ></span>
+                                        <span class="checkmark"></span>
                                         Monthly mean SST（每月海表平均溫度）
                                     </label>
                                     <label class="material-checkbox">
                                         <input type="checkbox" value="sst_anomaly">
-                                        <span class="checkmark" ></span>
+                                        <span class="checkmark"></span>
                                         Monthly SST Anomalies（每月海表溫度異常值）
                                     </label>
                                     <label class="material-checkbox">
                                         <input type="checkbox" value="level">
-                                        <span class="checkmark" ></span>
+                                        <span class="checkmark"></span>
                                         Monthly MHW levels（每月海洋熱浪級數）
                                     </label>
                                     <label class="material-checkbox">
                                         <input type="checkbox" value="td">
-                                        <span class="checkmark" ></span>
+                                        <span class="checkmark"></span>
                                         Themal Displacements（每月熱位移）
                                     </label>
 
@@ -2299,8 +2340,10 @@
             // Set default date values
             let startDate = document.querySelector('#startDate');
             let endDate = document.querySelector('#endDate');
+            let selectMonth = document.querySelector('#month');
+            let selectYear = document.querySelector('#year');
             let now = new Date();
-
+            selectYear.value = now.getFullYear().toString();
             if (now.getDate() < 18) {
                 // 如果今天是這個月的18號以前
                 now.setMonth(now.getMonth() - 2); // 將月份設定為兩個月前
@@ -2311,6 +2354,8 @@
                 let startDateValue = new Date(now);
                 startDateValue.setMonth(startDateValue.getMonth() - 1);
                 startDate.valueAsDate = startDateValue;
+                let a = (now.getMonth() + 1).toString().padStart(2, '0');
+                selectMonth.value=a
             } else {
                 // 如果今天是18號或之後
                 now.setMonth(now.getMonth() - 1); // 將月份設定為上一個月
@@ -2321,6 +2366,8 @@
                 let startDateValue = new Date(now);
                 startDateValue.setMonth(startDateValue.getMonth() - 1);
                 startDate.valueAsDate = startDateValue;
+                let a = (now.getMonth() + 1).toString().padStart(2, '0');
+                selectMonth.value=a
             }
             //endDate.valueAsDate = now;
             //now.setMonth(now.getMonth() - 1);
@@ -2482,9 +2529,9 @@
                     step_c_1: `The threshold for marine heatwave occurrence: The monthly SST anomalies (as in Step B) must exceed the 90th percentile of the seasonal background value*.<br>
                     *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
                     step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave.`,
-                    showbtn:"Show",
-                    month:"Month",
-                    year:"Year",
+                    showbtn: "Show",
+                    month: "Month",
+                    year: "Year",
                     result_1: `July 2023 global data on marine heatwave levels.`,
                     result_2: `August 2023 global data on marine heatwave levels.`,
                     result_3: `In the waters near Taiwan at longitude 122.625°E and latitude 25.375°N, the time series of the marine heatwave level from January 2020 to August 2023.`,
@@ -2503,10 +2550,10 @@
                     end_lon: `End Longitude`,
                     start_lat: `Start Latitude `,
                     end_lat: `End Latitude `,
-                    mean_sst:`Monthly mean SST`,
-                    mean_sstan:`Monthly SST Anomalies`,
-                    level:`Monthly MHW levels`,
-                    td:`Themal Displacements`,
+                    mean_sst: `Monthly mean SST`,
+                    mean_sstan: `Monthly SST Anomalies`,
+                    level: `Monthly MHW levels`,
+                    td: `Themal Displacements`,
                     lon0: `Please enter a number between -180 and 180.`,
                     lon1: `Please enter a number between -180 and 180, or leave it empty.`,
                     lat0: `Please enter a number between -90 and 90.`,
@@ -2577,8 +2624,8 @@
                                 個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)`,
                     step_d: `比較 Step B 與 Step C 即得知海洋熱浪發生與否及 SST 異常值。<br />若有熱浪，找出海洋熱浪引起的熱位移。`,
                     showbtn: `顯示圖片`,
-                    month:"月",
-                    year:"年",
+                    month: "月",
+                    year: "年",
                     result_1: `本資料庫 2023 年七月全球的海洋熱浪分級。`,
                     result_2: `本資料庫 2023 年八月全球的海洋熱浪分級。`,
                     result_3: `於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 八月的海洋熱浪分級時間序列。`,
@@ -2599,10 +2646,10 @@
                     end_lon: `結束經度`,
                     start_lat: `起始緯度`,
                     end_lat: `結束緯度`,
-                    mean_sst:`每月海表平均溫度 (Monthly mean SST)`,
-                    mean_sstan:`每月海表溫度異常值 (Monthly SST Anomalies)`,
-                    level:`每月海洋熱浪級數 (Monthly MHW levels)`,
-                    td:`每月熱位移 (Themal Displacements)`,
+                    mean_sst: `每月海表平均溫度 (Monthly mean SST)`,
+                    mean_sstan: `每月海表溫度異常值 (Monthly SST Anomalies)`,
+                    level: `每月海洋熱浪級數 (Monthly MHW levels)`,
+                    td: `每月熱位移 (Themal Displacements)`,
                     download_subtitle1: `透過輸入資訊下載`,
                     download_subtitle2: `透過 API 取得`,
                     lon0: `須為介於 -180 到 180 的數字。`,
@@ -2632,13 +2679,37 @@
                 });
             }
 
-            const selects = document.querySelectorAll('select');
-            console.log(selects);
-            selects.forEach((select)=>{
-                console.log(select)
-                const numberOfOption=select.length
-                console.log(numberOfOption)
-            })
+            document.getElementById('showbtn').addEventListener('click', function() {
+                // Retrieve selected month and year values
+                let selectedMonth = selectMonth.value;
+                let selectedYear = selectYear.value;
+                let selectedMonthInt = parseInt(selectedMonth, 10);
+                let selectedYearInt = parseInt(selectedYear, 10);
+                let currentYear = new Date().getFullYear();
+                let now = new Date();
+                let currentMonth;
+                if (now.getDate() < 18) {
+                // 如果今天是這個月的18號以前
+                currentMonth = now.getMonth() - 1;
+                } else {
+                currentMonth = now.getMonth(); 
+                }
+                if (selectedYearInt > currentYear || (selectedYearInt == currentYear && selectedMonthInt > currentMonth)) {
+                    // Set to the latest available image
+                    selectedYear = currentYear.toString();
+                    selectedMonth =  currentMonth.toString().padStart(2, '0');
+                }
+                
+                // Update the image sources
+                document.querySelector('.figwrapper2 img[src*="_level.jpg"]').src = `./assets/${selectedYear}${selectedMonth}_level.jpg`;
+                document.querySelector('.figwrapper2 img[src*="_td.jpg"]').src = `./assets/${selectedYear}${selectedMonth}_td.jpg`;
+                document.querySelector('#month').value = selectedMonth;
+                document.querySelector('#year').value = selectedYear;
+      
+            });
+
+               
+            
         </script>
     </body>
 
