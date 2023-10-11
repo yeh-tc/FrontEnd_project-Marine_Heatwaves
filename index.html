@@ -1595,13 +1595,15 @@
                 justify-content: space-between;
                 gap:3em;
             }
-           .select-list{
-            width: 100%;
+           .custom-select{
+                width: 100%;
            }
-            select{
+
+           .custom-select select{
                 width: 100%;
                 color: #565656;
                 border: #E16541 solid 1px;
+                background-color: #fff;
                 box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
                 -moz-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
                 -webkit-box-shadow: 0 2px 6px rgba(131, 43, 26, 0.12);
@@ -1618,9 +1620,10 @@
                 -o-border-radius: 5px;
                 -ms-border-radius: 5px;
             }
-            select:hover{
+            .custom-select select:hover{
                 background-color: #fff1ec;
             }
+            
 
             #showbtn {
                 width: 100%;
@@ -1877,7 +1880,7 @@
                                 <h3><span class="underline">Results</span></h3>
                                 <div class="dropdownAll">
                                     
-                                    <div class="select-list">
+                                    <div class="custom-select">
                                         <select name="month" id="month">
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -1894,10 +1897,8 @@
                                         </select>
                                     </div>
                                     
-                                    <div class="select-list">
+                                    <div class="custom-select">
                                         <select name="year" id="year">
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
                                             <option value="2022">2022</option>
                                             <option value="2023">2023</option>
                                         </select>
@@ -2737,7 +2738,6 @@
             });
 
                
-            
         </script>
     </body>
 
