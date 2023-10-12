@@ -2191,7 +2191,7 @@
 
                             <div class="api-demo">
                                 <div class="download-subtitle2">
-                                    <a href="https://eco.odb.ntu.edu.tw/api/swagger" class="download-link"
+                                    <a href="https://eco.odb.ntu.edu.tw/api/swagger/mhw" class="download-link"
                                         target="_blank">
                                         <button class="download-button">
                                             <span class="button-text">
@@ -2530,7 +2530,7 @@
                                 When seawater remains abnormally warm for an extended period compared to historical average temperatures, 
                                 it's referred to as 'marine heatwaves' (MHWs) (<a href="https://www.fish.wa.gov.au/documents/research_reports/frr222.pdf" target="_blank">Pearce et al., 2011</a>; <a href="https://www.sciencedirect.com/science/article/pii/S0079661116000057" target="_blank">Hobday et al., 2016</a>). The MHWs can cover vast areas, spanning thousands of square kilometers and lasting for weeks or even months (<a href="https://www.nature.com/articles/nclimate3082" target="_blank">Di Lorenzo and Mantua, 2016</a>). 
                                 Such prolonged warming events significantly affect marine life, ecosystems, and fisheries. 
-                                To raise general awareness about MHWs, ODB provides MHWs' open data that is compiled from <a href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA's OISST</a> data at a 0.25° x 0.25° resolution. 
+                                To raise general awareness about MHWs, ODB provides MHWs' open data that is compiled from <a href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA's OISST</a> data at a 0.25° x 0.25° resolution (<a href="https://journals.ametsoc.org/view/journals/clim/34/8/JCLI-D-20-0166.1.xml" target="_blank">Huang et al. 2021</a>). 
                                 Following <a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al.'s (2020)</a> approach, ODB evaluates MHW occurrences for each month from 1982 to the present, covering approximately 40 years (for more details, refer to the 'Method' section). 
                                 The severity of MHWs is classified into distinct levels according to the criteria defined by <a href="https://tos.org/oceanography/article/categorizing-and-naming-marine-heatwaves" target="_blank">Hobday et al.'s (2018)</a>. 
                                 These categorized MHW levels, as well as the monthly mean SST, SST anomalies, and thermal displacements* caused by MHWs, collectively constitute our comprehensive global database. 
@@ -2556,7 +2556,7 @@
                     step_b: `Calculate monthly SST anomalies :<br/>Monthly mean SST (from Step A) - Long-term monthly mean SST (from 1982-2011).`,
                     step_c: `Based on the SST anomalies, define the marine heatwave threshold values by Step C-1.`,
                     step_c_1: `The threshold for marine heatwave occurrence: The monthly SST anomalies (as in Step B) must exceed the 90th percentile of the seasonal background value*.<br>
-                    *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
+                    *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March during 1982-2011 (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
                     step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave.`,
                     showbtn: "Show",
                     month: "Month",
@@ -2618,7 +2618,7 @@
                                     Lorenzo and Mantua, 2016</a>)，而這種長時間異常高溫的環境對於海洋生物、海洋生態系統和漁業資源都造成極大的影響。
                                 為了提升民眾對海洋熱浪的認識， ODB 使用 <a
                                     href="https://www.ncei.noaa.gov/products/optimum-interpolation-sst" target="_blank">NOAA OISST</a>（Optimum Interpolation Sea
-                                Surface Temperature 海表溫度）0.25° x 0.25° 的資料，
+                                Surface Temperature 海表溫度）0.25° x 0.25° 的資料 (<a href="https://journals.ametsoc.org/view/journals/clim/34/8/JCLI-D-20-0166.1.xml" target="_blank">Huang et al. 2021</a>)，
                                 並依 <a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et
                                     al. (2020)</a> 的方法，計算了全球 1982 年至今約 40 年間每個月的海洋熱浪事件（詳見 Method），
                                 同時，我們依據 <a
@@ -2649,7 +2649,7 @@
                     step_b: `計算每月 SST 異常值：<br />每月平均 SST (Step A) - 各月 SST 長期平均值 (1982-2011)。`,
                     step_c: `將計算出的異常值，根據 Step C-1 的方法定義海洋熱浪門檻值。`,
                     step_c_1: `每月 SST 異常值（算法如 Step B）至少高於季節背景值*的第 90 個百分位數。<br />
-                                *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1、2、3 月全部每月 SST 異常值的第 90
+                                *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1982-2011 年中 1、2、3 月全部每月 SST 異常值的第 90
                                 個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)`,
                     step_d: `比較 Step B 與 Step C 即得知海洋熱浪發生與否及 SST 異常值。<br />若有熱浪，找出海洋熱浪引起的熱位移。`,
                     showbtn: `顯示圖片`,
