@@ -122,6 +122,9 @@
                 display: inline-flex;
                 gap: 16px;
             }
+            .nav-textlink a:hover {
+               color:#E16541;
+            }
 
             .nav-left {
                 display: inline-flex;
@@ -188,6 +191,10 @@
                 display: flex;
                 align-items: center;
                 height: 50px;
+            }
+
+            aside a:hover{
+                color:#E16541;
             }
 
             .switch-in-aside {
@@ -330,7 +337,7 @@
             }
 
             .container {
-                max-width: 1400px;
+                max-width: 1200px;
                 overflow: hidden;
             }
 
@@ -557,7 +564,7 @@
 
             #download .form-input {
                 flex: 1;
-                margin-bottom: 23px;
+                margin-bottom: 1vh;
             }
 
             #download label,
@@ -627,7 +634,7 @@
 
             #download .select-list {
                 width: 100%;
-                margin-bottom: 53px;
+                margin-bottom: 3vh;
             }
 
             #download p {
@@ -970,7 +977,7 @@
             }
 
             .footer-container {
-                max-width: 1400px;
+                max-width: 1200px;
                 width: 100%;
                 padding: 0px 30px;
             }
@@ -1020,12 +1027,8 @@
 
 
             .figwrapper2 img {
-                max-width: 750px;
+                max-width: 720px;
             }
-            .figwrapper3 img {
-                max-width: 700px;
-            }
-
             .download-subtitle2 {
                 display: flex;
                 justify-content: start;
@@ -1104,7 +1107,7 @@
                 }
 
                 #about .img_caption {
-                    max-width: 650px;
+                    max-width: 500px;
                 }
 
                 #method .img_caption {
@@ -1164,7 +1167,7 @@
                 }
 
                 .figwrapper2 img {
-                    max-width: 750px;
+                    max-width: 720px;
                 }
             }
 
@@ -1195,7 +1198,7 @@
                 
 
                 #about .img_caption {
-                    max-width: 90%;
+                    max-width: 85%;
                 }
 
                 #method .img_caption {
@@ -1277,7 +1280,7 @@
 
             
                 #about .img_caption {
-                    max-width: 100%;
+                    max-width: 87%;
                 }
 
                 #method .img_caption {
@@ -1341,39 +1344,8 @@
                     margin-bottom: 60px;
                 }
 
-                .about-fig {
-                    
-                    flex-direction: column;
-                    -moz-flex-direction: column;
-                    -webkit-flex-direction: column;
-                    -o-flex-direction: column;
-                    -ms-flex-direction: column;
-                    margin: 0px;
-                    justify-content: center;
-                    -moz-justify-content: center;
-                    -webkit-justify-content: center;
-                    -o-justify-content: center;
-                    -ms-justify-content: center;
-                }
-                #about img {
-                    max-width: 600px;
-                }
-                .bottom-fig{
-                    flex-direction: column;
-                    -moz-flex-direction: column;
-                    -webkit-flex-direction: column;
-                    -o-flex-direction: column;
-                    -ms-flex-direction: column;
-                    margin: 0px;
-                    justify-content: center;
-                    -moz-justify-content: center;
-                    -webkit-justify-content: center;
-                    -o-justify-content: center;
-                    -ms-justify-content: center;
-                }
-                .figwrapper2 img {
-                    max-width: 600px;
-                }
+                
+
             }
 
             @media screen and (max-width: 1024px) {
@@ -1424,7 +1396,41 @@
                     margin-bottom: 40px;
                 }
 
-               
+                .bottom-fig{
+                    flex-direction: column;
+                    -moz-flex-direction: column;
+                    -webkit-flex-direction: column;
+                    -o-flex-direction: column;
+                    -ms-flex-direction: column;
+                    margin: 0px;
+                    justify-content: center;
+                    -moz-justify-content: center;
+                    -webkit-justify-content: center;
+                    -o-justify-content: center;
+                    -ms-justify-content: center;
+                }
+
+                .about-fig {
+                    
+                    flex-direction: column;
+                    -moz-flex-direction: column;
+                    -webkit-flex-direction: column;
+                    -o-flex-direction: column;
+                    -ms-flex-direction: column;
+                    margin: 0px;
+                    justify-content: center;
+                    -moz-justify-content: center;
+                    -webkit-justify-content: center;
+                    -o-justify-content: center;
+                    -ms-justify-content: center;
+                }
+                #about img {
+                    max-width: 620px;
+                }
+
+                .figwrapper2 img {
+                    max-width: 650px;
+                }
 
             }
 
@@ -1821,10 +1827,10 @@
                                         et al. (2018)。</a></div>
                             </div>
                             <div class="figwrapper">
-                                <img src="./assets/time_series_example3.jpg" alt="" style="vertical-align:middle"
+                                <img src="./assets/time_series_example.jpg" alt="" style="vertical-align:middle"
                                     class="img_responsive" /><br>
                                 <div class="img_caption" data-lang="result_3">
-                                    於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 八月的海洋熱浪分級時間序列。
+                                    於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至今的海洋熱浪分級時間序列。
                                 </div>
                             </div>
                         </div>
@@ -1852,8 +1858,10 @@
                                 </div>
                                 <div class="card">
                                     <h3><span class="underline">Step B</span></h3>
-                                    <p data-lang="step_b">計算每月 SST 異常值：<br />
-                                        每月平均 SST (Step A) - 各月 SST 長期平均值 (1982-2011)。</p>
+                                    <p data-lang="step_b">計算每月 SST 異常值*：<br />
+                                        每月平均 SST (Step A) - 各月 SST 長期平均值 (1982-2011)。
+                                        
+                                    </p>
                                 </div>
                                 <div class="card">
                                     <h3><span class="underline">Step C</span></h3>
@@ -1899,8 +1907,11 @@
                                     
                                     <div class="custom-select">
                                         <select name="year" id="year">
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
                                             <option value="2022">2022</option>
                                             <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
                                         </select>
                                     </div>
                                     <button id="showbtn">
@@ -1940,6 +1951,7 @@
                                 <p>ODB: <a href="https://github.com/yeh-tc/Python_project-Thermal_Displacement"
                                         target="_blank">https://github.com/yeh-tc/Python_project-Thermal_Displacement</a>
                                     (in Python)</p>
+
                             </div>
                             <div class="card">
                                 <div>
@@ -2271,7 +2283,7 @@
                 </div>
             </div>
             <div class="copywright">
-                <p>Copyright &copy;2023 海洋學門資料庫-Ocean Data Bank (ODB). All Rights Reserved</p>
+                <p>Copyright &copy;2024 海洋學門資料庫-Ocean Data Bank (ODB). All Rights Reserved</p>
             </div>
         </footer>
 
@@ -2372,12 +2384,24 @@
             let selectMonth = document.querySelector('#month');
             let selectYear = document.querySelector('#year');
             let now = new Date();
-            selectYear.value = now.getFullYear().toString();
+            
+            //selectYear.value = now.getFullYear().toString();
+            if(now.getMonth()===0 && now.getDate() < 18){
+                selectYear.value = (now.getFullYear()-1).toString();
+            }else{
+                selectYear.value = now.getFullYear().toString();
+            }
+            
             if (now.getDate() < 18) {
                 // 如果今天是這個月的18號以前
-                now.setMonth(now.getMonth() - 2); // 將月份設定為兩個月前
                 now.setDate(1); // 將日期設定為1
-                endDate.valueAsDate = now;
+                now.setMonth(now.getMonth() - 2); // 將月份設定為兩個月前
+                
+                if (now.getMonth() === 0) {
+                    // If the current month is January, adjust the year
+                    now.setFullYear(now.getFullYear() - 1);
+                    selectYear.value = (now.getFullYear()-1).toString();
+                }
 
                 // 設定startDate為endDate的前一個月
                 let startDateValue = new Date(now);
@@ -2385,19 +2409,35 @@
                 startDate.valueAsDate = startDateValue;
                 let a = (now.getMonth() + 1).toString().padStart(2, '0');
                 selectMonth.value=a
+                endDate.valueAsDate = now;
+                
             } else {
                 // 如果今天是18號或之後
-                now.setMonth(now.getMonth() - 1); // 將月份設定為上一個月
                 now.setDate(1); // 將日期設定為1
-                endDate.valueAsDate = now;
-
-                // 設定startDate為endDate的前一個月
+                 // 將月份設定為上一個月 //結束時間
+                
+                if (now.getMonth() === 0) {
+                    // If the current month is January, adjust the year
+                    now.setFullYear(now.getFullYear() - 1);
+                    selectYear.value = (now.getFullYear()-1).toString();
+                }else{
+                    now.setMonth(now.getMonth() - 1);
+                }
+                
+                
+                
+                //// 設定startDate為endDate的前一個月
                 let startDateValue = new Date(now);
                 startDateValue.setMonth(startDateValue.getMonth() - 1);
                 startDate.valueAsDate = startDateValue;
-                let a = (now.getMonth() + 1).toString().padStart(2, '0');
+                let a = (now.getMonth()+1).toString().padStart(2, '0');
                 selectMonth.value=a
+                endDate.valueAsDate = now;
             }
+            
+            
+            document.querySelector('.figwrapper2 img[src*="_level.jpg"]').src = `./assets/${selectYear.value}${selectMonth.value}_level.jpg`;
+            document.querySelector('.figwrapper2 img[src*="_td.jpg"]').src = `./assets/${selectYear.value}${selectMonth.value}_td.jpg`;
             //endDate.valueAsDate = now;
             //now.setMonth(now.getMonth() - 1);
             //now.setDate(1);
@@ -2449,6 +2489,10 @@
 
                 const downloadBtn = document.getElementById('downloadbtn');
                 downloadBtn.classList.add('waiting');
+                console.log(downloadBtn)
+                downloadBtn.disabled = !downloadBtn.classList.contains("waiting")
+                    ? false
+                    : true;
                 const btnicon = document.getElementById("btnicon");
                 btnicon.innerHTML = !downloadBtn.classList.contains("waiting")
                     ? "download"
@@ -2483,6 +2527,9 @@
                     btnicon.innerHTML = !downloadBtn.classList.contains("waiting")
                         ? "download"
                         : "refresh";
+                    downloadBtn.disabled = !downloadBtn.classList.contains("waiting")
+                        ? false
+                        : true;
                 }
 
             });
@@ -2537,8 +2584,7 @@
                                 The datasets will receive monthly updates and are available for download. 
                                 Furthermore, we provide access to <a href="https://ecodata.odb.ntu.edu.tw/geoserver/marineheatwave/wms?service=WMS&request=GetCapabilities" target="_blank">WMS</a> and <a 
                                 href="https://ecodata.odb.ntu.edu.tw/geoserver/gwc/service/wmts/?service=WMTS&request=getCapabilities">WMTS</a> layers for MHWs (see hyperlinks), 
-                                and the <a href="https://ecodata.odb.ntu.edu.tw/geoserver/
-                                marineheatwave/wms" target="_blank">instruction</a> for application on QGIS.<br><br>
+                                and the <a href="https://oceandatabank.github.io/MHW_QGIS/" target="_blank">instruction</a> for application on QGIS.<br><br>
 
                                 According to the <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 Intergovernmental Panel on Climate Change (IPCC) report</a>,
                                  the frequency, intensity, and duration of global MHWs have increased and will continue to rise into the future. 
@@ -2553,22 +2599,36 @@
                     fig2_text: `June 2023 global data on (a) marine heatwave levels and (b) thermal displacements induced by marine heatwaves.`,
                     method_title: `ODB Marine Heatwave Definition and Calculation Method`,
                     step_a: `Using NOAA OISST v2.1 dataset, calculate the monthly mean SST from 1982 to the present.`,
-                    step_b: `Calculate monthly SST anomalies :<br/>Monthly mean SST (from Step A) - Long-term monthly mean SST (from 1982-2011).`,
+                    step_b: `Calculate monthly SST anomalies* :<br/>Monthly mean SST (from Step A) - Long-term monthly mean SST (from 1982-2011).<br/> *The result is without detrend.`,
                     step_c: `Based on the SST anomalies, define the marine heatwave threshold values by Step C-1.`,
                     step_c_1: `The threshold for marine heatwave occurrence: The monthly SST anomalies (as in Step B) must exceed the 90th percentile of the seasonal background value*.<br>
                     *Seasonal background value: Incorporate the month prior and subsequent to the calculated month as the background. For example, to set the threshold for marine heatwaves in February, consider the combined 90th percentile of SST anomalies for January, February, and March during 1982-2011 (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>).`,
-                    step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave.`,
+                    step_d: `By Step B and Step C, get the SST anomalies and determine the occurrence of marine heatwaves. If a marine heatwave occurred, evaluate the thermal displacement caused by the marine heatwave*.<br/>
+                    *Thermal displacement is defined as the minimum distance needed to track the long-term average sea surface temperature, as described by Jacox et al. (2020). In its calculation, factors like the feasibility of biological movement are taken into account, preventing unrealistic pathways such as land crossings. The global ocean is segmented into regions with certain areas designated as restricted for movement (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020<a>). For a comprehensive breakdown of the calculation methods, please see the provided Github link. `,
                     showbtn: "Show",
                     month: "Month",
                     year: "Year",
                     result_1: `July 2023 global data on marine heatwave levels.`,
                     result_2: `August 2023 global data on marine heatwave levels.`,
-                    result_3: `In the waters near Taiwan at longitude 122.625°E and latitude 25.375°N, the time series of the marine heatwave level from January 2020 to August 2023.`,
+                    result_3: `In the waters near Taiwan at longitude 122.625°E and latitude 25.375°N, the time series of the marine heatwave level from January 2020 to now.`,
                     download_note: `Important Notes`,
                     download1: `The downloaded file will be in .csv format.`,
-                    download2: `Longitude range: -180° ~ 180°, Latitude range: -90° ~ 90°, Time range: 1982-Jan-01 to the previous month.`,
-                    download3: `Output data columns: lon (longitude), lat (latitude), date (date format: yyyy-mm-dd, e.g., 2023-06-01 represents data for June 2023), sst (monthly mean sea surface temperature, °C), 
-                                sst_anomaly (monthly sea surface temperature anomaly, °C), level (monthly marine heatwave level), td (monthly thermal displacement, km).`,
+                    download2: `Input data columns:
+                                <ul>
+                                    <li>Longitude range: -180° ~ 180°</li>
+                                    <li>Latitude range: -90° ~ 90°</li>
+                                    <li>Time range: 1982-Jan-01 to the previous month</li>
+                                </ul>`,
+                    download3: `Output data columns:
+                                <ul>
+                                    <li>lon (longitude)</li>
+                                    <li>lat (latitude)</li>
+                                    <li>date (date format: yyyy-mm-dd, e.g. 2023-06-01 equivalent to data for June 2023)</li>
+                                    <li>sst (monthly mean sea surface temperature, in °C, blank indicates NaN)</li>
+                                    <li>sst_anomaly (monthly sea surface temperature anomaly, in °C, blank indicates NaN)</li>
+                                    <li>level (monthly marine heatwave level, -1 indicates sea ice for the month, 0-4 represents the degree of marine heatwave level )</li>
+                                    <li>td (monthly thermal displacement, in km, blank indicates NaN)</li>
+                                </ul>`,
                     download4: `For downloading single-point data with no time constraints, please input the starting longitude, starting latitude, and time period.`,
                     download5: `For downloading regional data, if the region's dimensions are ≤ 90° x 90°, the maximum time range is one year. Please input the longitude range, latitude range, and time period.`,
                     download6: `For downloading regional data, if the region's dimensions are > 90° x 90°, the maximum time range is one month. Please input the longitude range, latitude range, and time period.`,
@@ -2628,8 +2688,7 @@
                                 該資料將每月進行更新，並開放資料下載。同時，我們也開放 <a
                                     href="https://ecodata.odb.ntu.edu.tw/geoserver/marineheatwave/wms?service=WMS&request=GetCapabilities">WMS</a>
                                 與 <a href="https://ecodata.odb.ntu.edu.tw/geoserver/gwc/service/wmts/?service=WMTS&request=getCapabilities">WMTS</a> 圖層（介接網址如超連結），
-                                歡迎各界介接（若使用 QGIS 介接，可參考<a href="https://ecodata.odb.ntu.edu.tw/geoserver/
-                                marineheatwave/wms" target="_blank">此網頁</a>）。<br /><br />
+                                歡迎各界介接（若使用 QGIS 介接，可參考<a href="https://oceandatabank.github.io/MHW_QGIS/" target="_blank">此網頁</a>）。<br /><br />
                                 
                                 根據 <a href="https://doi.org/10.1017/9781009325844" target="_blank">2022 年的《政府間氣候變化專門委員會》(IPCC) 報告</a>，未來全球海洋熱浪事件不僅頻率將增加，強度與持續時間也將上升。
                                 面對愈來愈頻繁發生的海洋熱浪 (<a href="https://www.nature.com/articles/s41586-018-0383-9" target="_blank">Frölicher et al. 2018</a>; <a href="https://www.nature.com/articles/s41467-018-03732-9" target="_blank">Oliver et al., 2018</a>) ，
@@ -2646,23 +2705,35 @@
                     fig2_text: `本資料庫 2023 年六月全球 (a) 海洋熱浪分級、(b) 海洋熱浪引起的熱位移。`,
                     method_title: `ODB 海洋熱浪計算方法與定義`,
                     step_a: `使用 NOAA OISST 0.25° x 0.25° 的 v2.1 資料集，計算 1982 至今每月平均 SST。`,
-                    step_b: `計算每月 SST 異常值：<br />每月平均 SST (Step A) - 各月 SST 長期平均值 (1982-2011)。`,
+                    step_b: `計算每月 SST 異常值*：<br />每月平均 SST (Step A) - 各月 SST 長期平均值 (1982-2011)。<br/>*該結果沒有去除趨勢。`,
                     step_c: `將計算出的異常值，根據 Step C-1 的方法定義海洋熱浪門檻值。`,
                     step_c_1: `每月 SST 異常值（算法如 Step B）至少高於季節背景值*的第 90 個百分位數。<br />
                                 *季節背景值：將計算月份的前後一個月納入當作背景值，例如定義 2 月份海洋熱浪的門檻值，即為綜合過去 1982-2011 年中 1、2、3 月全部每月 SST 異常值的第 90
                                 個百分位數。(<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)`,
-                    step_d: `比較 Step B 與 Step C 即得知海洋熱浪發生與否及 SST 異常值。<br />若有熱浪，找出海洋熱浪引起的熱位移。`,
+                    step_d: `比較 Step B 與 Step C 即得知海洋熱浪發生與否及 SST 異常值。<br />若有熱浪，找出海洋熱浪引起的熱位移*。<br/>
+                             *熱位移就是在海洋熱浪的影響下，為了追隨長期平均海表溫度所需移動的最小距離 (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)。 
+                             計算熱位移時考慮生物移動的合理性 (例如無法穿越陸地等) ，將全球海洋分區，並限制可移動的區域 (<a href="https://www.nature.com/articles/s41586-020-2534-z" target="_blank">Jacox et al., 2020</a>)，詳細計算方法請參考 Github 連結。`,
                     showbtn: `顯示圖片`,
                     month: "月",
                     year: "年",
                     result_1: `本資料庫 2023 年七月全球的海洋熱浪分級。`,
                     result_2: `本資料庫 2023 年八月全球的海洋熱浪分級。`,
-                    result_3: `於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至 2023 八月的海洋熱浪分級時間序列。`,
+                    result_3: `於臺灣近海東經 122.625 度、北緯 25.375 度，2020 一月至今的海洋熱浪分級時間序列。`,
                     download_note: `注意事項`,
                     download1: `下載之檔案為 .csv`,
-                    download2: `經度範圍：-180&deg; ~ 180&deg;，緯度範圍：-90&deg; ~ 90&deg;，時間範圍：1982-Jan-01 ~ 上個月。`,
-                    download3: `資料輸出欄位：lon（經度）、lat（緯度）、date（日期，yyyy-mm-dd，ex. 2023-06-01 等同 2023 六月份資料）、
-                                sst（每月海表平均溫度，&deg;C）、sst_anomaly（每月海表溫度異常值，&deg;C）、level（每月海洋熱浪級數）、td（每月熱位移，km）。`,
+                    download2: `資料輸入欄位：
+                                <ul><li>經度範圍：-180&deg; ~ 180&deg</li>
+                                    <li>緯度範圍：-90&deg; ~ 90&deg</li>
+                                    <li>時間範圍：1982-Jan-01 ~ 上個月</li>`,
+                    download3: `資料輸出欄位：
+                                <ul><li>lon（經度）</li>
+                                    <li>lat（緯度）</li>
+                                    <li>date（日期，yyyy-mm-dd，ex. 2023-06-01 等同 2023 六月份資料）</li>
+                                    <li>sst（每月海表平均溫度，單位 &deg;C，空白代表 NaN）</li>
+                                    <li>sst_anomaly（每月海表溫度異常值，單位 &deg;C，空白代表 NaN）</li>
+                                    <li>level（每月海洋熱浪級數，-1 代表當月為海冰，0~4 代表海洋熱浪分級程度）</li>
+                                    <li>td（每月熱位移，km，空白代表 NaN）</li>
+                                </ul>`,
                     download4: `下載單點資料，無時間限制，請輸入起始經度、起始緯度和時間區段。`,
                     download5: `下載區域資料，若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年，請輸入經度、緯度範圍和時間區段。`,
                     download6: `下載區域資料，若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段。`,
@@ -2736,7 +2807,8 @@
                 document.querySelector('#year').value = selectedYear;
       
             });
-
+            
+        
                
         </script>
     </body>
