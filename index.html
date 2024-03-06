@@ -2384,7 +2384,6 @@
             let selectMonth = document.querySelector('#month');
             let selectYear = document.querySelector('#year');
             let now = new Date();
-            
             //selectYear.value = now.getFullYear().toString();
             if(now.getMonth()===0 && now.getDate() < 18){
                 selectYear.value = (now.getFullYear()-1).toString();
@@ -2395,12 +2394,15 @@
             if (now.getDate() < 18) {
                 // 如果今天是這個月的18號以前
                 now.setDate(1); // 將日期設定為1
-                now.setMonth(now.getMonth() - 2); // 將月份設定為兩個月前
+                
                 
                 if (now.getMonth() === 0) {
                     // If the current month is January, adjust the year
                     now.setFullYear(now.getFullYear() - 1);
                     selectYear.value = (now.getFullYear()-1).toString();
+                    now.setMonth(11);
+                }else{
+                    now.setMonth(now.getMonth()- 2); // 將月份設定為兩個月前
                 }
 
                 // 設定startDate為endDate的前一個月
