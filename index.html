@@ -2203,7 +2203,7 @@
 
                             <div class="api-demo">
                                 <div class="download-subtitle2">
-                                    <a href="https://eco.odb.ntu.edu.tw/api/swagger/mhw" class="download-link"
+                                    <a href="https://api.odb.ntu.edu.tw/hub/swagger?node=odb_mhw_v1" class="download-link"
                                         target="_blank">
                                         <button class="download-button">
                                             <span class="button-text">
@@ -2654,9 +2654,10 @@
                     mutlple: "Data Download (multiple)",
                     hash: `#Connect to your software from our API<br>
                     #lon0 and lat0 are must<br>
-                    #One-point MHWs without time-span limitation<br>
-                    #Bounding-box <= 90x90 in degrees: 1-year time-span limitation: e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
-                    #Bounding-box > 90x90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01<br>`,
+                    #One-point MHWs without time-span limitation (data from 1982 to latest)<br>
+                    #Bounding-box <= 10 x 10 in degrees: 10-years time-span limitation. e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2013-01-01 (data from 2013/01/01 to 2022/12/01)<br>
+                    #Bounding-box > 10 x 10 in degrees: 1-year time-span limitation. e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2014-01-01 (data from 2014/01/01 to 2014/12/01)<br>
+                    #Bounding-box > 90x90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2021-01-01 (data of 2014/01/01)<br>`,
                     example: `#API request example`,
                     example_output: `#output example`,
                     info: `Institute of Oceanography, NTU<br>
@@ -2762,9 +2763,10 @@
                     hash: `
                     #從我們的 API 連接到您的軟體<br>
                     #lon0 與 lat0 為必要參數<br>
-                    #單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15<br>
-                    #若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年  e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2021-01-01<br>
-                    #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1&=180&lat0=-90&lat1=90&start=2021-01-01<br>`,
+                    #單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15 (可得 1982 年到最新的資料)<br>
+                    #若區域範圍 &le; 10&deg; x 10&deg;，時間區段最長可達十年 e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2014-01-01 (可得 2013/01/01-2022/12/01 時間段的資料)<br>
+                    #若區域範圍 &gt; 10&deg; x 10&deg;，時間區段最長只能一年 e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2014-01-01 (可得 2014/01/01-2014/12/01 時間段的資料)<br>
+                    #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2021-01-01 (可得 2021/01/01 的資料)`,
                     example: `#API 請求範例`,
                     example_output: `#輸出範例`,
                     info: ` 國立臺灣大學海洋研究所 <br>
@@ -2774,7 +2776,7 @@
                 }
             };
             function switchLanguage(lang) {
-                const elementsToTranslate = document.querySelectorAll('[data-lang]');
+                const elementsToTranslate = document.querySelectorAll('[data-lang]');/api/
                 elementsToTranslate.forEach(element => {
                     const translationKey = element.getAttribute('data-lang');
                     element.innerHTML = translations[lang][translationKey];
