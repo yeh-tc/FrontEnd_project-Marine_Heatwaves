@@ -1015,6 +1015,11 @@
                 font-size: 14px;
                 color: rgba(255, 255, 255, 0.84);
             }
+            .copywright p span{
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.84);
+                font-weight: 300;
+            }
 
 
             .bottom-fig {
@@ -1912,6 +1917,7 @@
                                             <option value="2022">2022</option>
                                             <option value="2023">2023</option>
                                             <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
                                         </select>
                                     </div>
                                     <button id="showbtn">
@@ -2087,8 +2093,10 @@
                                             sst（每月海表平均溫度，&deg;C）、sst_anomaly（每月海表溫度異常值，&deg;C）、level（每月海洋熱浪級數）、td（每月熱位移，km）。
                                         </li>
                                         <li data-lang="download4">下載單點資料，無時間限制，請輸入起始經度、起始緯度和時間區段。</li>
-                                        <li data-lang="download5">下載區域資料，若區域範圍 &le; 90&deg; x
-                                            90&deg;，時間區段最長只能一年，請輸入經度、緯度範圍和時間區段。</li>
+                                        <li data-lang="download5">下載區域資料，若區域範圍 &le; 10&deg; x
+                                            10&deg;，時間區段最長只能十年，請輸入經度、緯度範圍和時間區段。</li>
+                                        <li data-lang="download5a">下載區域資料，若區域範圍 &gt; 10&deg; x
+                                                10&deg;，時間區段最長只能一年，請輸入經度、緯度範圍和時間區段。</li>
                                         <li data-lang="download6">下載區域資料，若區域範圍 &gt; 90&deg; x
                                             90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段。</li>
                                         <li data-lang="download7">若您使用 ODB 提供的資料，引用格式如: Ocean Data Bank,
@@ -2283,13 +2291,13 @@
                 </div>
             </div>
             <div class="copywright">
-                <p>Copyright &copy;2024 海洋學門資料庫-Ocean Data Bank (ODB). All Rights Reserved</p>
+                <p>Copyright &copy; <span id="currentYear"></span> 海洋學門資料庫-Ocean Data Bank (ODB). All Rights Reserved</p>
             </div>
         </footer>
 
         <script>
-
-
+            const currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll("nav a");
             const resetLinks = () => {
@@ -2384,59 +2392,42 @@
             let selectMonth = document.querySelector('#month');
             let selectYear = document.querySelector('#year');
             let now = new Date();
-            //selectYear.value = now.getFullYear().toString();
-            if(now.getMonth()===0 && now.getDate() < 18){
-                selectYear.value = (now.getFullYear()-1).toString();
-            }else{
-                selectYear.value = now.getFullYear().toString();
-            }
-            
-            if (now.getDate() < 18) {
-                // 如果今天是這個月的18號以前
-                now.setDate(1); // 將日期設定為1
-                
-                
-                if (now.getMonth() === 0) {
-                    // If the current month is January, adjust the year
+            if (now.getDate() < 18){
+                now.setDate(1);
+                if (now.getMonth()===0){
+                    //if january, set to November of previous year
                     now.setFullYear(now.getFullYear() - 1);
-                    selectYear.value = (now.getFullYear()-1).toString();
-                    now.setMonth(11);
+                    now.setMonth(10);//November
                 }else{
-                    now.setMonth(now.getMonth()- 2); // 將月份設定為兩個月前
+                    now.setMonth(now.getMonth() - 2);
                 }
-
-                // 設定startDate為endDate的前一個月
-                let startDateValue = new Date(now);
-                startDateValue.setMonth(startDateValue.getMonth() - 1);
-                startDate.valueAsDate = startDateValue;
-                let a = (now.getMonth() + 1).toString().padStart(2, '0');
-                selectMonth.value=a
-                endDate.valueAsDate = now;
-                
-            } else {
-                // 如果今天是18號或之後
-                now.setDate(1); // 將日期設定為1
-                 // 將月份設定為上一個月 //結束時間
-                
-                if (now.getMonth() === 0) {
-                    // If the current month is January, adjust the year
+            }else{
+                now.setDate(1);
+                if (now.getMonth()===0){
+                    //if january, set to December of previous year
                     now.setFullYear(now.getFullYear() - 1);
-                    selectYear.value = (now.getFullYear()-1).toString();
+                    now.setMonth(11);//December
                 }else{
                     now.setMonth(now.getMonth() - 1);
                 }
-                
-                
-                
-                //// 設定startDate為endDate的前一個月
-                let startDateValue = new Date(now);
-                startDateValue.setMonth(startDateValue.getMonth() - 1);
-                startDate.valueAsDate = startDateValue;
-                let a = (now.getMonth()+1).toString().padStart(2, '0');
-                selectMonth.value=a
-                endDate.valueAsDate = now;
             }
-            
+            console.log(now)
+            let datalatestDate = new Date(now);
+            endDate.valueAsDate = datalatestDate;
+            //// Set `startDate` to one month earlier
+            let oneMonthAgo = new Date(datalatestDate);
+            if  (oneMonthAgo.getMonth() === 0) {
+                // If rolling back from January, adjust to December of the previous year
+                oneMonthAgo.setFullYear(oneMonthAgo.getFullYear() - 1);
+                oneMonthAgo.setMonth(11); // December
+            } else {
+                oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+            }
+            startDate.valueAsDate = oneMonthAgo;
+//
+            selectYear.value = now.getFullYear().toString();
+            selectMonth.value = (now.getMonth() + 1).toString().padStart(2, '0');
+
             
             document.querySelector('.figwrapper2 img[src*="_level.jpg"]').src = `./assets/${selectYear.value}${selectMonth.value}_level.jpg`;
             document.querySelector('.figwrapper2 img[src*="_td.jpg"]').src = `./assets/${selectYear.value}${selectMonth.value}_td.jpg`;
@@ -2632,7 +2623,8 @@
                                     <li>td (monthly thermal displacement, in km, blank indicates NaN)</li>
                                 </ul>`,
                     download4: `For downloading single-point data with no time constraints, please input the starting longitude, starting latitude, and time period.`,
-                    download5: `For downloading regional data, if the region's dimensions are ≤ 90° x 90°, the maximum time range is one year. Please input the longitude range, latitude range, and time period.`,
+                    download5: `For downloading regional data, if the region's dimensions are ≤ 10° x 10°, the maximum time range is ten years. Please input the longitude range, latitude range, and time period.`,
+                    download5a: `For downloading regional data, if the region's dimensions are > 10° x 10°, the maximum time range is one year. Please input the longitude range, latitude range, and time period.`,
                     download6: `For downloading regional data, if the region's dimensions are > 90° x 90°, the maximum time range is one month. Please input the longitude range, latitude range, and time period.`,
                     download7: `If you utilize data provided by ODB, please cite as: Ocean Data Bank, National Science and Technology Council, Taiwan. https://doi.org/10.5281/zenodo.7512112. Accessed DAY/MONTH/YEAR from www.odb.ntu.edu.tw.`,
                     start_time: `Start Time`,
@@ -2655,9 +2647,9 @@
                     hash: `#Connect to your software from our API<br>
                     #lon0 and lat0 are must<br>
                     #One-point MHWs without time-span limitation (data from 1982 to latest)<br>
-                    #Bounding-box <= 10 x 10 in degrees: 10-years time-span limitation. e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2013-01-01 (data from 2013/01/01 to 2022/12/01)<br>
-                    #Bounding-box > 10 x 10 in degrees: 1-year time-span limitation. e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2014-01-01 (data from 2014/01/01 to 2014/12/01)<br>
-                    #Bounding-box > 90x90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2021-01-01 (data of 2014/01/01)<br>`,
+                    #Bounding-box <= 10 x 10 in degrees: 10-years time-span limitation: e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2013-01-01 (data from 2013/01/01 to 2022/12/01)<br>
+                    #Bounding-box > 10 x 10 in degrees: 1-year time-span limitation: e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2013-01-01 (data from 2013/01/01 to 2013/12/01)<br>
+                    #Bounding-box > 90 x 90 in degrees: 1-month time-span limitation: e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2013-01-01 (data of 2013/01/01)<br>`,
                     example: `#API request example`,
                     example_output: `#output example`,
                     info: `Institute of Oceanography, NTU<br>
@@ -2738,7 +2730,8 @@
                                     <li>td（每月熱位移，km，空白代表 NaN）</li>
                                 </ul>`,
                     download4: `下載單點資料，無時間限制，請輸入起始經度、起始緯度和時間區段。`,
-                    download5: `下載區域資料，若區域範圍 &le; 90&deg; x 90&deg;，時間區段最長只能一年，請輸入經度、緯度範圍和時間區段。`,
+                    download5: `下載區域資料，若區域範圍 &le; 10&deg; x 10&deg;，時間區段最長可達十年，請輸入經度、緯度範圍和時間區段。`,
+                    download5a: `下載區域資料，若區域範圍 &gt; 10&deg; x 10&deg;，時間區段最長只能一年，請輸入經度、緯度範圍和時間區段。`,
                     download6: `下載區域資料，若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段。`,
                     download7: `若您使用 ODB 提供的資料，引用格式如: Ocean Data Bank, National Science and Technology Council,
                                 Taiwan. https://doi.org/10.5281/zenodo.7512112. Accessed DAY/MONTH/YEAR from
@@ -2764,9 +2757,9 @@
                     #從我們的 API 連接到您的軟體<br>
                     #lon0 與 lat0 為必要參數<br>
                     #單點查詢並無時間限制 e.g. /api/mhw/csv?lon0=135&lat0=15 (可得 1982 年到最新的資料)<br>
-                    #若區域範圍 &le; 10&deg; x 10&deg;，時間區段最長可達十年 e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2014-01-01 (可得 2013/01/01-2022/12/01 時間段的資料)<br>
-                    #若區域範圍 &gt; 10&deg; x 10&deg;，時間區段最長只能一年 e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2014-01-01 (可得 2014/01/01-2014/12/01 時間段的資料)<br>
-                    #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2021-01-01 (可得 2021/01/01 的資料)`,
+                    #若區域範圍 &le; 10&deg; x 10&deg;，時間區段最長可達十年 e.g. /api/mhw/csv?lon0=135&lon1=140&lat0=15&lat1=30&start=2013-01-01 (可得 2013/01/01-2022/12/01 時間段的資料)<br>
+                    #若區域範圍 &gt; 10&deg; x 10&deg;，時間區段最長只能一年 e.g. /api/mhw/csv?lon0=135&lon1=150&lat0=15&lat1=30&start=2013-01-01 (可得 2013/01/01-2013/12/01 時間段的資料)<br>
+                    #若區域範圍 &gt; 90&deg; x 90&deg;，時間區段最長只能一個月，請輸入經度、緯度範圍和時間區段 e.g. /api/mhw/csv?lon0=-180&lon1=180&lat0=-90&lat1=90&start=2013-01-01 (可得 2013/01/01 的資料)`,
                     example: `#API 請求範例`,
                     example_output: `#輸出範例`,
                     info: ` 國立臺灣大學海洋研究所 <br>
